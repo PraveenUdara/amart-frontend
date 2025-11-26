@@ -285,16 +285,29 @@ body {
     height: 500px;
   }
 }
+@media (max-width: 900px) {
+  .business-buttons-container {
+    grid-template-columns: repeat(2, 1fr);  /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .business-buttons-container {
+    grid-template-columns: repeat(1, 1fr);  /* 1 per row */
+  }
+}
+
 
 /* -------- BUSINESS BUTTON GRID AT BOTTOM OF HOME -------- */
 
 /* BUSINESS BUTTON GRID */
 .business-buttons-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, 1fr);   /* ALWAYS 4 per row */
   gap: 30px;
   padding: 30px;
 }
+
 
 /* Business Button Card */
 .business-btn-card {
