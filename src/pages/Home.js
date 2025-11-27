@@ -6,6 +6,7 @@ import BusinessButtons from "../components/BusinessButtons";
 import homeBg from "../assets/home_bg.jpg";
 import leftPost from "../assets/lab_bg.jpg";
 import rightPost from "../assets/lab_bg2.jpg";
+import doctorsImg from "../assets/doctors.png"; // ⬅ NEW IMAGE IMPORT
 
 const Home = () => {
   return (
@@ -68,6 +69,34 @@ const Home = () => {
 
       {/* NEW BUSINESS BUTTONS SECTION */}
       <BusinessButtons />
+
+      {/* ✅ NEW DOCTOR SECTION AT THE BOTTOM */}
+      <section className="choose-section">
+        <div className="choose-content">
+          <h2>Why Patients Choose Us</h2>
+
+          <p>
+            At A Mart Health, we work with dedicated and highly experienced healthcare 
+            professionals to deliver advanced, evidence-based clinical care for complex 
+            diseases. Our Centres of Excellence ensure outstanding treatment outcomes 
+            using the world's modern medical technologies.
+          </p>
+
+          <p>
+            We also provide preventive healthcare, lifestyle-based treatments, and a 
+            complete range of diagnostic services.
+          </p>
+
+          <p>
+            All A Mart Health facilities follow internationally recognized accreditation 
+            and patient safety standards.
+          </p>
+        </div>
+
+        <div className="choose-image">
+          <img src={doctorsImg} alt="Medical Team" />
+        </div>
+      </section>
 
     </div>
   );

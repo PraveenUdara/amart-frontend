@@ -1,0 +1,227 @@
+/* ----------------- ABOUT US PAGE ----------------- */
+
+.page {
+  width: 100%;
+  background: #f8fbff;
+}
+
+/* ----------------- HERO IMAGE SECTION ----------------- */
+.about-hero-container {
+  width: 100%;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* ----------------- MAIN ABOUT CONTENT BOX ----------------- */
+.about-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* ----------------- TITLE ----------------- */
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a2540;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ----------------- PARAGRAPHS ----------------- */
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #455a64;
+  margin-bottom: 20px;
+  text-align: justify;
+  padding: 0 5px;
+}
+
+/* ----------------- MOBILE RESPONSIVE ----------------- */
+@media (max-width: 768px) {
+  .about-hero-img {
+    height: 300px;
+  }
+
+  .about-section {
+    padding: 30px 20px;
+    margin: 40px 15px;
+  }
+
+  .about-title {
+    font-size: 1.6rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* ------------------------------------------------------------ */
+/*      MISSION / VISION / VALUES INTERACTIVE SECTION           */
+/* ------------------------------------------------------------ */
+
+.mv-section {
+  display: flex;
+  gap: 40px;
+  padding: 60px 8%;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #f8fbff;
+}
+
+/* LEFT SIDE BUTTONS */
+.mv-tabs {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mv-tab-btn {
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 1rem;
+  padding: 8px 0;
+  color: #90a4ae;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s ease;
+}
+
+.mv-tab-btn::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.mv-tab-btn-active {
+  color: #e65100;
+  font-weight: 600;
+}
+
+.mv-tab-btn-active::before {
+  background: #e65100;
+}
+
+/* RIGHT SIDE CONTENT */
+.mv-content {
+  flex: 1;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mv-image {
+  flex: 0 0 320px;
+  max-width: 380px;
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+.mv-text-block {
+  flex: 1;
+  min-width: 260px;
+}
+
+.mv-small-label {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9e9e9e;
+  margin-bottom: 8px;
+}
+
+.mv-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #00648f;
+  margin-bottom: 18px;
+}
+
+.mv-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #455a64;
+}
+
+/* VALUES LIST */
+.mv-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.mv-list li {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #455a64;
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 6px;
+}
+
+.mv-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #e65100;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .mv-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mv-content {
+    flex-direction: column;
+  }
+
+  .mv-image {
+    max-width: 100%;
+  }
+
+  .mv-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .mv-section {
+    padding: 40px 6%;
+  }
+
+  .mv-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .mv-tab-btn {
+    padding-right: 16px;
+  }
+}
