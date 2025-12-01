@@ -1,0 +1,129 @@
+/* ---------------------- NAVBAR ---------------------- */
+.navbar {
+  background: #e3f2ff;
+  border-bottom: 1px solid #c7ddff;
+  padding: 14px 24px;
+  width: 100%;
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-img {
+  height: 60px; /* bigger logo */
+  width: auto;
+}
+
+.nav-logo-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0d47a1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: transparent;
+  border: 2px solid #0d47a1;
+  color: #0d47a1;
+  transition: 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background: #0d47a1;
+  color: white;
+}
+
+.nav-link-active {
+  background: #0d47a1;
+  color: white;
+}
+
+/* ---------------------- NAVBAR RESPONSIVE ---------------------- */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 10px 14px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-link {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+/* BUSINESS DROPDOWN CONTAINER */
+.nav-dropdown {
+  position: relative;
+}
+
+/* DROPDOWN BUTTON STYLE (Business) */
+.nav-link-dropdown {
+  cursor: pointer;
+}
+
+/* DROPDOWN MENU BOX */
+.dropdown-menu {
+  position: absolute;
+  top: 45px;                       /* distance from Business button */
+  left: 0;
+  background: #f4f8f4;             /* soft light green-white like image */
+  padding: 14px 0;
+  border-radius: 12px;             /* rounded corners */
+  min-width: 180px;                /* similar size as image */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  animation: fadeIn 0.2s ease;
+}
+
+/* ITEMS INSIDE DROPDOWN */
+.dropdown-item {
+  display: block;
+  padding: 10px 20px;
+  color: #0a2540;                  /* dark text */
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+/* HOVER EFFECT */
+.dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.05);  /* light hover highlight */
+  padding-left: 25px;               /* smooth slide */
+}
+
+/* SMOOTH DROPDOWN ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

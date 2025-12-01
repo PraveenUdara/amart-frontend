@@ -1,12 +1,27 @@
 // src/components/Navbar.js
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/logo.png"; // ✅ use your new PNG logo
+import logo from "../assets/logo.png"; 
+import "./Navbar.css";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const businessItems = [
+    { label: "Diagnostics", path: "/business/diagnostics" },
+    { label: "Pharmaceuticals", path: "/business/pharma" },
+    { label: "Medical Tourism", path: "/business/medical-tourism" },
+    { label: "Clinic", path: "/business/clinic" },
+    { label: "Expia", path: "/business/expia" }, // Branding renamed
+    { label: "Helaya Pharmacy", path: "/business/helaya-pharmacy" },
+    { label: "Helaya International", path: "/business/helaya-international" },
+    { label: "A Mart Design", path: "/business/amart-design" },
+  ];
+
   return (
     <nav className="navbar">
       <div className="navbar-inner">
+        
         {/* Logo + text */}
         <div className="navbar-logo">
           <img src={logo} alt="A Mart Holdings" className="nav-logo-img" />
@@ -15,6 +30,7 @@ const Navbar = () => {
 
         {/* Navigation links */}
         <div className="nav-links">
+
           <NavLink
             to="/"
             end
@@ -34,14 +50,35 @@ const Navbar = () => {
             About Us
           </NavLink>
 
-          <NavLink
-            to="/business"
-            className={({ isActive }) =>
-              "nav-link" + (isActive ? " nav-link-active" : "")
-            }
+          {/* BUSINESS DROPDOWN */}
+          <div
+            className="nav-dropdown"
+            onMouseEnter={() => setIsOpen(true)}
+            onMouseLeave={() => setIsOpen(false)}
           >
-            Business
-          </NavLink>
+            <button
+              type="button"
+              className="nav-link nav-link-dropdown"
+              onClick={() => setIsOpen((prev) => !prev)}
+            >
+              Business
+            </button>
+
+            {isOpen && (
+              <div className="dropdown-menu">
+                {businessItems.map((item) => (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    className="dropdown-item"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </div>
+            )}
+          </div>
 
           <NavLink
             to="/events"

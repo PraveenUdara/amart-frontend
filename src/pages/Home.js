@@ -7,6 +7,8 @@ import homeBg from "../assets/home_bg.jpg";
 import leftPost from "../assets/lab_bg.jpg";
 import rightPost from "../assets/lab_bg2.jpg";
 import doctorsImg from "../assets/doctors.png"; // ⬅ NEW IMAGE IMPORT
+import "../styles/Home.css";
+
 
 const Home = () => {
   return (
