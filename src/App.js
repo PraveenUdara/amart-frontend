@@ -3,9 +3,10 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";        // ✅ Correct footer import
 import ScrollToTop from "./components/ScrollToTop";
- // ✅ Add this line
 
+// Pages
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Business from "./pages/Business";
@@ -16,7 +17,7 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <ScrollToTop />  {/* ✅ Auto scroll to top */}
+        <ScrollToTop />
 
         <Navbar />
 
@@ -30,9 +31,7 @@ function App() {
           </Routes>
         </main>
 
-        <footer className="footer">
-          © {new Date().getFullYear()} A Mart Holdings. All rights reserved.
-        </footer>
+        <Footer />   {/* ✅ Your real footer shows here */}
       </Router>
     </div>
   );

@@ -69,16 +69,10 @@ body {
   opacity: 0.9;
 }
 
-/* ---------------------- FOOTER ---------------------- */
-.footer {
-  background: #e3f2ff;
-  padding: 14px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #455a64;
-}
+
 
 /* ---------------------- RESPONSIVE (GLOBAL ONLY) ---------------------- */
 @media (max-width: 600px) {
   /* No home page code here */
+
 }
