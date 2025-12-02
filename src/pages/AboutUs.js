@@ -3,13 +3,11 @@ import React, { useState } from "react";
 import aboutUsImg from "../assets/about_bg.jpg";
 import "../styles/AboutUs.css";
 
-// ⬇️ NEW IMAGE IMPORTS FOR MISSION / VISION / VALUES
-import missionImg from "../assets/mission.jpg";   // Our Mission image
-import visionImg from "../assets/vision.jpg";     // Our Vision image
-import valuesImg from "../assets/values.jpg";     // Our Values image
+import missionImg from "../assets/mission.jpg";
+import visionImg from "../assets/vision.jpg";
+import valuesImg from "../assets/values.jpg";
 
 const AboutUs = () => {
-  // ⬇️ DATA FOR TABS
   const sections = {
     mission: {
       key: "mission",
@@ -47,67 +45,85 @@ innovation and technology.`,
   const activeSection = sections[activeKey];
 
   return (
-    <div className="page">
-      {/* TOP HERO IMAGE */}
-      <div className="about-hero-container">
-        <img src={aboutUsImg} alt="About Us" className="about-hero-img" />
+    <div className="about-page">
+
+      {/* ⭐ HERO IMAGE WITH TEXT OVERLAY */}
+      <div className="about-hero">
+        <img src={aboutUsImg} alt="About Us" className="about-hero-bg" />
+        <div className="about-hero-overlay">
+          <h1 className="about-hero-title">About A Mart Holdings</h1>
+          <p className="about-hero-subtitle">
+            Connecting Sri Lanka to world-class healthcare, diagnostics & technology.
+          </p>
+        </div>
       </div>
 
-      {/* MAIN ABOUT TEXT BOX */}
-      <div className="about-section">
-        <h2 className="about-title">About A Mart Holdings</h2>
-
-        <p className="about-description">
+      {/* ⭐ MAIN ABOUT CONTENT CARD */}
+      <section className="about-card">
+        <p>
           A Mart Holdings partners with world-renowned healthcare providers,
-          pharmaceutical manufacturers and diagnostic laboratories to bring
-          the latest medical technology, products and services to Sri Lanka.
+          pharmaceutical manufacturers and diagnostic laboratories to bring the
+          latest medical technology, products and services to Sri Lanka.
         </p>
 
-        <p className="about-description">
+        <p>
           We work with leading diagnostic and research labs in Asia and Europe,
           facilitating patient testing in oncology, hematology and rare diseases.
         </p>
 
-        <p className="about-description">
+        <p>
           Our medical tourism division ensures patients receive world-class
           healthcare from top hospitals in Singapore and India.
         </p>
-      </div>
+      </section>
 
-      {/* ⭐ NEW MISSION / VISION / VALUES SECTION AT BOTTOM */}
-      <section className="mv-section">
-        {/* LEFT SIDE TABS */}
-        <div className="mv-tabs">
+      {/* ⭐ MISSION / VISION / VALUES MODERN SECTION */}
+      <section className="mv-modern">
+
+        {/* HORIZONTAL TABS WITH UNDERLINE ANIMATION */}
+        <div className="mv-tabs-modern">
           {Object.values(sections).map((sec) => (
             <button
               key={sec.key}
               className={
-                "mv-tab-btn" + (activeKey === sec.key ? " mv-tab-btn-active" : "")
+                "mv-tab-modern-btn" +
+                (activeKey === sec.key ? " mv-tab-modern-active" : "")
               }
               onClick={() => setActiveKey(sec.key)}
             >
               {sec.label}
             </button>
           ))}
+          <div
+            className="mv-tab-underline"
+            style={{
+              transform:
+                activeKey === "mission"
+                  ? "translateX(0%)"
+                  : activeKey === "vision"
+                  ? "translateX(100%)"
+                  : "translateX(200%)",
+            }}
+          ></div>
         </div>
 
-        {/* RIGHT SIDE CONTENT */}
-        <div className="mv-content">
-          <img
-            src={activeSection.image}
-            alt={activeSection.title}
-            className="mv-image"
-          />
+        {/* CONTENT AREA APPEARS WITH FADE + SLIDE ANIMATION */}
+        <div className="mv-cards-container fade-slide">
+          <div className="mv-card-image">
+            <img
+              src={activeSection.image}
+              alt={activeSection.title}
+              className="mv-modern-img"
+            />
+          </div>
 
-          <div className="mv-text-block">
-            <p className="mv-small-label">{activeSection.label}</p>
-            <h3 className="mv-title">{activeSection.title}</h3>
+          <div className="mv-card-text">
+            <h3 className="mv-title-modern">{activeSection.title}</h3>
 
-            {/* Mission & Vision as paragraph, Values as bullet list */}
             {activeSection.key !== "values" ? (
-              <p className="mv-text">{activeSection.text}</p>
+              <p className="mv-modern-text">{activeSection.text}</p>
             ) : (
-              <ul className="mv-list">
+              <ul className="mv-modern-list">
                 {activeSection.textLines.map((line) => (
                   <li key={line}>{line}</li>
                 ))}
