@@ -6,9 +6,8 @@ import BusinessButtons from "../components/BusinessButtons";
 import homeBg from "../assets/home_bg.jpg";
 import leftPost from "../assets/lab_bg.jpg";
 import rightPost from "../assets/lab_bg2.jpg";
-import doctorsImg from "../assets/doctors.png"; // ⬅ NEW IMAGE IMPORT
+import doctorsImg from "../assets/doctors.png";
 import "../styles/Home.css";
-
 
 const Home = () => {
   return (
@@ -69,10 +68,18 @@ const Home = () => {
         </div>
       </div>
 
-      {/* NEW BUSINESS BUTTONS SECTION */}
-      <BusinessButtons />
+      {/* ⭐ RIGHT-SIDE BUSINESS BUTTON GRID SECTION */}
+      <div className="business-section-wrapper">
 
-      {/* ✅ NEW DOCTOR SECTION AT THE BOTTOM */}
+        {/* LEFT SIDE PLACEHOLDER (you can add content later) */}
+        <div className="business-left-content"></div>
+
+        {/* RIGHT SIDE — DO NOT WRAP IN ANOTHER GRID */}
+        <BusinessButtons />
+
+      </div>
+
+      {/* DOCTOR SECTION */}
       <section className="choose-section">
         <div className="choose-content">
           <h2>Why Patients Choose Us</h2>

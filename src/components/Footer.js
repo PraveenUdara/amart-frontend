@@ -53,7 +53,7 @@ const Footer = () => {
               className="footer-social-icon"
               alt="Facebook"
             />
-            Facebook Page
+            Facebook 
           </a>
         </div>
 

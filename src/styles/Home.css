@@ -41,7 +41,7 @@
   line-height: 1.7;
 }
 
-/* ---------------------- MINI POSTS (left & right cards) ---------------------- */
+/* ---------------------- MINI POSTS SECTION ---------------------- */
 .home-post-section {
   display: flex;
   justify-content: center;
@@ -96,12 +96,30 @@
   line-height: 1.4;
 }
 
-/* -------- BUSINESS BUTTON GRID AT BOTTOM OF HOME -------- */
+/* --------------------------------------------------------- */
+/*      NEW: BUSINESS SECTION WRAPPER (PUSH RIGHT SIDE)      */
+/* --------------------------------------------------------- */
+.business-section-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 40px 30px;
+  gap: 40px;
+}
+
+/* LEFT SIDE PLACEHOLDER (You can add text later) */
+.business-left-content {
+  flex: 1.1;
+  min-height: 200px;
+}
+
+/* RIGHT SIDE BUTTON GRID */
 .business-buttons-container {
+  flex: 1.5;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  padding: 30px;
 }
 
 /* Business Button Card */
@@ -149,7 +167,7 @@
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* WHY CHOOSE US */
+/* ---------------------- WHY CHOOSE US ---------------------- */
 .choose-section {
   width: 100%;
   display: flex;
@@ -197,6 +215,16 @@
 }
 
 /* ---------------------- RESPONSIVE ---------------------- */
+@media (max-width: 1100px) {
+  .business-section-wrapper {
+    flex-direction: column;
+  }
+
+  .business-buttons-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
   .hero-title {
     font-size: 2.2rem;
