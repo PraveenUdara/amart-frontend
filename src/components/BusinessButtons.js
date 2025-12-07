@@ -2,7 +2,7 @@
 import React from "react";
 import "../index.css";
 
-// Import images
+// Button icon images
 import pharmaImg from "../assets/pharma.jpg";
 import diagnosticsImg from "../assets/diagnostics.jpg";
 import tourismImg from "../assets/tourism.jpg";
@@ -10,27 +10,92 @@ import helayaPharmacyImg from "../assets/helaya_pharmacy.webp";
 import helayaInternationalImg from "../assets/helaya_international.jpg";
 import brandingImg from "../assets/amart_branding.jpg";
 import helayaClinicImg from "../assets/helaya_clinic.jpg";
-import expiaImg from "../assets/expia.jpg";  // NEW
+import expiaImg from "../assets/expia.jpg";
 
-const BusinessButtons = () => {
+// PREVIEW IMAGES (THE CORRECT VARIABLE NAMES)
+import preview1 from "../assets/businessPreview/1.jpg";
+import preview2 from "../assets/businessPreview/2.jpg";
+import preview3 from "../assets/businessPreview/3.jpg";
+import preview4 from "../assets/businessPreview/4.jpg";
+import preview5 from "../assets/businessPreview/5.jpg";
+import preview6 from "../assets/businessPreview/6.jpg";
+import preview7 from "../assets/businessPreview/7.jpg";
+import preview8 from "../assets/businessPreview/8.jpg";
 
+const BusinessButtons = ({ onHoverChange }) => {
   const items = [
-    { title: "Pharmaceuticals", image: pharmaImg },
-    { title: "Medical Diagnostics", image: diagnosticsImg },
-    { title: "Medical Tourism", image: tourismImg },
-    { title: "Helaya Pharmacy", image: helayaPharmacyImg },
-    { title: "Helaya International", image: helayaInternationalImg },
-    { title: "A Mart Branding & Design", image: brandingImg },
-    { title: "Helaya Clinic", image: helayaClinicImg },
-    { title: "Expia", image: expiaImg },   // NEW BUTTON
+    {
+      title: "Pharmaceuticals",
+      icon: pharmaImg,
+      preview: preview1,
+      desc: "Provides high-quality medicines and therapeutic products."
+    },
+    {
+      title: "Medical Diagnostics",
+      icon: diagnosticsImg,
+      preview: preview2,
+      desc: "Advanced diagnostic testing with international lab partners."
+    },
+    {
+      title: "Medical Tourism",
+      icon: tourismImg,
+      preview: preview3,
+      desc: "Access world-class treatment in Singapore and India."
+    },
+    {
+      title: "Helaya Pharmacy",
+      icon: helayaPharmacyImg,
+      preview: preview4,
+      desc: "Modern pharmacy chain with genuine medicines."
+    },
+    {
+      title: "Helaya International",
+      icon: helayaInternationalImg,
+      preview: preview5,
+      desc: "Global sourcing, partnerships and healthcare solutions."
+    },
+    {
+      title: "A Mart Branding & Design",
+      icon: brandingImg,
+      preview: preview6,
+      desc: "Creative branding, marketing and digital design studio."
+    },
+    {
+      title: "Helaya Clinic",
+      icon: helayaClinicImg,
+      preview: preview7,
+      desc: "Clinical consultations and preventive healthcare services."
+    },
+    {
+      title: "Expia",
+      icon: expiaImg,
+      preview: preview8,
+      desc: "Premium wellness and nutritional supplement brand."
+    }
   ];
 
   return (
     <div className="business-buttons-container">
       {items.map((btn, index) => (
-        <div className="business-btn-card" key={index}>
-          <img src={btn.image} className="business-btn-img" alt={btn.title} />
-
+        <div
+          key={index}
+          className="business-btn-card"
+          onMouseEnter={() =>
+            onHoverChange({
+              title: btn.title,
+              desc: btn.desc,
+              preview: btn.preview
+            })
+          }
+          onMouseLeave={() =>
+            onHoverChange({
+              title: "Business Overview",
+              desc: "Hover over a business to see details.",
+              preview: null
+            })
+          }
+        >
+          <img src={btn.icon} className="business-btn-img" alt={btn.title} />
           <div className="business-btn-overlay">
             <h3>{btn.title}</h3>
           </div>
@@ -41,4 +106,3 @@ const BusinessButtons = () => {
 };
 
 export default BusinessButtons;
-

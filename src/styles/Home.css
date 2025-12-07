@@ -1,13 +1,26 @@
 /* ---------------------- HERO SECTION ---------------------- */
 .hero-section {
   width: 100%;
+  height: 700px;
   position: relative;
+  overflow: hidden;
 }
 
+/* MULTI IMAGE SLIDER (FADE IN / FADE OUT) */
 .home-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 700px;
   object-fit: cover;
+  
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;  /* Smooth fade */
+}
+
+.home-bg.active {
+  opacity: 1; /* The image that is currently visible */
 }
 
 .hero-overlay {
@@ -97,7 +110,7 @@
 }
 
 /* --------------------------------------------------------- */
-/*      NEW: BUSINESS SECTION WRAPPER (PUSH RIGHT SIDE)      */
+/*      BUSINESS SECTION (LEFT DESCRIPTION + RIGHT CARDS)    */
 /* --------------------------------------------------------- */
 .business-section-wrapper {
   display: flex;
@@ -108,13 +121,27 @@
   gap: 40px;
 }
 
-/* LEFT SIDE PLACEHOLDER (You can add text later) */
+/* LEFT DESCRIPTION AREA */
 .business-left-content {
   flex: 1.1;
-  min-height: 200px;
+  min-height: 250px;
+  padding: 20px;
 }
 
-/* RIGHT SIDE BUTTON GRID */
+.hover-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #0a2540;
+}
+
+.hover-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* RIGHT GRID BUTTON AREA */
 .business-buttons-container {
   flex: 1.5;
   display: grid;
@@ -122,7 +149,7 @@
   gap: 30px;
 }
 
-/* Business Button Card */
+/* Business Card */
 .business-btn-card {
   position: relative;
   height: 220px;
@@ -270,4 +297,42 @@
     text-align: left;
     padding: 40px 6%;
   }
+}
+.business-left-content {
+  flex: 1.1;
+  min-height: 250px;
+  padding: 20px;
+}
+
+.business-preview-image {
+  width: 100%;
+  max-height: 330px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  margin-bottom: 18px;
+}
+
+.hover-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0a2540;
+}
+
+.hover-default {
+  font-size: 18px;
+  color: #777;
+}
+.business-preview-img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  margin-top: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
 }

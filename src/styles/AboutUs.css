@@ -1,93 +1,189 @@
 /* ------------------------------------- */
-/*          NEW MODERN ABOUT PAGE        */
+/*          GLOBAL ABOUT PAGE STYLE      */
 /* ------------------------------------- */
 
 .about-page {
-  background: #f8fbff;
+  background: #f6f9fc;
   width: 100%;
+  font-family: "Poppins", sans-serif;
 }
 
-/* ---------------- HERO SECTION ---------------- */
+/* ------------------------------------- */
+/*               HERO SECTION            */
+/* ------------------------------------- */
 
 .about-hero {
   position: relative;
   width: 100%;
   height: 420px;
   overflow: hidden;
+  border-radius: 0 0 18px 18px;
 }
 
 .about-hero-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.85);
+  transition: transform 1.2s ease;
 }
 
+.about-hero:hover .about-hero-bg {
+  transform: scale(1.05);
+}
+
+/* Text bottom-right */
 .about-hero-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 25, 45, 0.45);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
+  bottom: 30px;
+  right: 50px;
+  text-align: right;
+  color: #ffffff;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.65);
+  animation: fadeIn 1s ease forwards;
 }
 
 .about-hero-title {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
-  letter-spacing: 1px;
 }
 
 .about-hero-subtitle {
-  font-size: 1.2rem;
-  margin-top: 10px;
+  font-size: 1.25rem;
+  margin-top: 6px;
   opacity: 0.9;
 }
 
-/* -------------- MAIN ABOUT TEXT CARD -------------- */
+/* Title Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------- */
+/*            MAIN ABOUT CARD            */
+/* ------------------------------------- */
 
 .about-card {
   background: #ffffff;
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 40px 30px;
-  border-radius: 14px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
-  line-height: 1.8;
+  max-width: 1200px;
+  margin: 45px auto;
+  padding: 40px 45px;
+  border-radius: 16px;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.08);
+  line-height: 1.65;
   font-size: 1.15rem;
+  color: #455a64;
+
+  animation: fadeSlide 0.7s ease;
+}
+
+/* Better spacing */
+.about-card p {
+  margin-bottom: 18px;
+}
+
+/* Fade Slide Animation */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------- */
+/*        CHAIRMAN MESSAGE SECTION       */
+/* ------------------------------------- */
+
+.chairman-section {
+  width: 100%;
+  padding: 70px 10%;
+  margin-top: 50px;
+
+  background: linear-gradient(
+    145deg,
+    #eef4fa 0%,
+    #ffffff 50%,
+    #f2f7fc 100%
+  );
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.chairman-content {
+  flex: 1.2;
+}
+
+.chairman-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #003f5c;
+  margin-bottom: 16px;
+  text-align: right;
+}
+
+.chairman-text {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  text-align: right;
   color: #455a64;
 }
 
-/* ------------------------------------------ */
-/*     MISSION / VISION / VALUES — MODERN     */
-/* ------------------------------------------ */
-
-.mv-modern {
-  margin-top: 40px;
-  padding: 60px 8%;
+.chairman-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
-/* ---------- TABS (HORIZONTAL + ANIMATION) ---------- */
+.chairman-image {
+  width: 330px;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.chairman-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.25);
+}
+
+/* ------------------------------------- */
+/*     MISSION / VISION / VALUES TABS    */
+/* ------------------------------------- */
+
+.mv-modern {
+  margin-top: 60px;
+  padding: 70px 8%;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.06);
+}
 
 .mv-tabs-modern {
   display: flex;
-  gap: 30px;
-  border-bottom: 2px solid #dfe7f1;
+  gap: 40px;
+  border-bottom: 2px solid #dce6f3;
   position: relative;
-  margin-bottom: 40px;
-  padding-bottom: 10px;
+  margin-bottom: 45px;
 }
 
 .mv-tab-modern-btn {
   background: transparent;
   border: none;
-  font-size: 1.1rem;
-  color: #7a8a9a;
+  font-size: 1.15rem;
+  padding: 10px 0;
+  color: #708090;
   cursor: pointer;
-  padding: 8px 0;
-  transition: 0.2s ease;
+  transition: 0.25s ease;
+}
+
+.mv-tab-modern-btn:hover {
+  color: #003f5c;
 }
 
 .mv-tab-modern-active {
@@ -98,95 +194,85 @@
 .mv-tab-underline {
   position: absolute;
   bottom: -2px;
-  left: 0;
-  width: 33%;
   height: 3px;
+  width: 33%;
   background: #005b8e;
-  transition: transform 0.3s ease;
   border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-/* ---------- CARD LAYOUT ---------- */
-
+/* Cards Area */
 .mv-cards-container {
   display: flex;
-  gap: 40px;
-  align-items: center;
+  gap: 50px;
   flex-wrap: wrap;
-}
-
-/* Fade + Slide Animation */
-.fade-slide {
-  animation: fadeSlide 0.5s ease forwards;
-}
-
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  align-items: center;
 }
 
 .mv-card-image {
-  flex: 0 0 350px;
+  flex: 0 0 360px;
 }
 
 .mv-modern-img {
   width: 100%;
   border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   object-fit: cover;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 .mv-card-text {
   flex: 1;
-  min-width: 260px;
 }
 
 .mv-title-modern {
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #003f5c;
   margin-bottom: 18px;
+  color: #003f5c;
 }
 
-.mv-modern-text {
-  font-size: 1.1rem;
+.mv-modern-text,
+.mv-modern-list li {
+  font-size: 1.15rem;
   color: #455a64;
-  line-height: 1.8;
-}
-
-/* Values list style */
-.mv-modern-list {
-  list-style: none;
-  padding: 0;
+  line-height: 1.75;
 }
 
 .mv-modern-list li {
-  font-size: 1.15rem;
-  margin-bottom: 10px;
-  padding-left: 18px;
+  padding-left: 22px;
   position: relative;
-  color: #455a64;
+  margin-bottom: 12px;
 }
 
 .mv-modern-list li::before {
   content: "•";
   position: absolute;
   left: 0;
-  top: 0;
+  top: 3px;
   color: #ff6f00;
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 1.4rem;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ------------------------------------- */
+/*              RESPONSIVE               */
+/* ------------------------------------- */
 
 @media (max-width: 900px) {
+  .chairman-section {
+    flex-direction: column-reverse;
+    padding: 50px 6%;
+    text-align: center;
+  }
+
+  .chairman-title,
+  .chairman-text {
+    text-align: center;
+  }
+
+  .chairman-image {
+    width: 250px;
+  }
+
   .mv-cards-container {
     flex-direction: column;
   }
@@ -194,26 +280,19 @@
   .mv-card-image {
     width: 100%;
   }
-
-  .mv-modern-img {
-    max-height: 300px;
-  }
 }
 
 @media (max-width: 600px) {
   .about-hero-title {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
+  }
+
+  .about-hero-overlay {
+    right: 20px;
+    bottom: 20px;
   }
 
   .mv-tabs-modern {
-    gap: 18px;
-  }
-
-  .mv-tab-modern-btn {
-    font-size: 1rem;
-  }
-
-  .mv-tab-underline {
-    width: 33%;
+    gap: 20px;
   }
 }
