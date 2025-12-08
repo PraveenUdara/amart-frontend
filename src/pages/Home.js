@@ -9,11 +9,15 @@ import doctorHero from "../assets/hero_diagnostics.jpg";
 import diagnosticsHero from "../assets/hero_diagnostics.jpg";
 import techHero from "../assets/hero_tech_healthcare.jpg";
 
+// MINI POSTS
 import leftPost from "../assets/lab_bg.jpg";
 import rightPost from "../assets/lab_bg2.jpg";
 import doctorsImg from "../assets/doctors.png";
 
 import "../styles/Home.css";
+
+// ⭐ DEFAULT PREVIEW IMAGE
+import defaultPreview from "../assets/businessPreview/default.jpg";
 
 const HERO_IMAGES = [homeBg, doctorHero, diagnosticsHero, techHero];
 
@@ -25,11 +29,16 @@ const Home = () => {
     const interval = setInterval(() => {
       setHeroIndex((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 4000);
+
     return () => clearInterval(interval);
   }, []);
 
-  /* ---------------------- BUSINESS HOVER DATA ------------------------ */
-  const [hoverData, setHoverData] = useState(null);
+  /* ---------------------- BUSINESS PREVIEW STATE ---------------------- */
+  const defaultHoverData = {
+    preview: defaultPreview,
+  };
+
+  const [hoverData, setHoverData] = useState(defaultHoverData);
 
   return (
     <div className="home">
@@ -68,17 +77,14 @@ const Home = () => {
         </div>
       </div>
 
-      {/* MINI POSTS */}
+      {/* ⭐ MINI POSTS SECTION */}
       <div className="home-post-section">
-
         <div className="home-post-card">
           <img src={leftPost} alt="Diagnostics" className="post-img" />
           <div className="post-overlay">
             <h2>Introducing</h2>
             <h1>Latest Diagnostic Services</h1>
-            <p>
-              We bring advanced diagnostic services to Sri Lanka through leading labs.
-            </p>
+            <p>We bring advanced diagnostic services to Sri Lanka through leading labs.</p>
           </div>
         </div>
 
@@ -87,46 +93,28 @@ const Home = () => {
           <div className="post-overlay">
             <h2>Introducing</h2>
             <h1>Latest Technologies</h1>
-            <p>
-              We introduce AI-driven technologies for healthcare, retail and finance.
-            </p>
+            <p>We introduce AI-driven technologies for healthcare, retail and finance.</p>
           </div>
         </div>
-
       </div>
 
       {/* ⭐ BUSINESS SECTION — PREVIEW LEFT + GRID RIGHT */}
       <div className="business-section-wrapper">
 
-        {/* LEFT PREVIEW BOX */}
+        {/* LEFT PREVIEW — IMAGE ONLY */}
         <div className="business-left-content">
-          {!hoverData ? (
-            <>
-              <h2 className="hover-title">Business Overview</h2>
-              <p className="hover-description">
-                Hover over a business to see details.
-              </p>
-            </>
-          ) : (
-            <>
-              {/* Preview image */}
-              {hoverData.preview && (
-                <img
-                  src={hoverData.preview}
-                  alt="Preview"
-                  className="business-preview-image"
-                />
-              )}
-
-              <h2 className="hover-title">{hoverData.title}</h2>
-              <p className="hover-description">{hoverData.desc}</p>
-            </>
-          )}
+          <img
+            src={hoverData?.preview || defaultPreview}
+            alt="Preview"
+            className="business-preview-image"
+          />
         </div>
 
-        {/* RIGHT SIDE — BUSINESS CARDS */}
-        <BusinessButtons onHoverChange={setHoverData} />
-
+        {/* RIGHT BUTTON GRID */}
+        <BusinessButtons
+          onHoverChange={setHoverData}
+          resetPreview={() => setHoverData(defaultHoverData)}
+        />
       </div>
 
       {/* ⭐ WHY CHOOSE US SECTION */}
@@ -153,7 +141,6 @@ const Home = () => {
           <img src={doctorsImg} alt="Medical Team" />
         </div>
       </section>
-
     </div>
   );
 };

@@ -1,5 +1,6 @@
 // src/components/BusinessButtons.js
-import React from "react";
+import React, { useState } from "react";
+import "../components/BusinessButtons.css";
 import "../index.css";
 
 // Button icon images
@@ -12,7 +13,7 @@ import brandingImg from "../assets/amart_branding.jpg";
 import helayaClinicImg from "../assets/helaya_clinic.jpg";
 import expiaImg from "../assets/expia.jpg";
 
-// PREVIEW IMAGES (THE CORRECT VARIABLE NAMES)
+// Preview images
 import preview1 from "../assets/businessPreview/1.jpg";
 import preview2 from "../assets/businessPreview/2.jpg";
 import preview3 from "../assets/businessPreview/3.jpg";
@@ -22,80 +23,84 @@ import preview6 from "../assets/businessPreview/6.jpg";
 import preview7 from "../assets/businessPreview/7.jpg";
 import preview8 from "../assets/businessPreview/8.jpg";
 
-const BusinessButtons = ({ onHoverChange }) => {
+const BusinessButtons = ({ onHoverChange, resetPreview }) => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   const items = [
     {
       title: "Pharmaceuticals",
       icon: pharmaImg,
       preview: preview1,
-      desc: "Provides high-quality medicines and therapeutic products."
+      desc: "Provides high-quality medicines and therapeutic products.",
     },
     {
       title: "Medical Diagnostics",
       icon: diagnosticsImg,
       preview: preview2,
-      desc: "Advanced diagnostic testing with international lab partners."
+      desc: "Advanced diagnostic testing with international lab partners.",
     },
     {
       title: "Medical Tourism",
       icon: tourismImg,
       preview: preview3,
-      desc: "Access world-class treatment in Singapore and India."
+      desc: "Access world-class treatment in Singapore and India.",
     },
     {
       title: "Helaya Pharmacy",
       icon: helayaPharmacyImg,
       preview: preview4,
-      desc: "Modern pharmacy chain with genuine medicines."
+      desc: "Modern pharmacy chain with genuine medicines.",
     },
     {
       title: "Helaya International",
       icon: helayaInternationalImg,
       preview: preview5,
-      desc: "Global sourcing, partnerships and healthcare solutions."
+      desc: "Global sourcing, partnerships and healthcare solutions.",
     },
     {
       title: "A Mart Branding & Design",
       icon: brandingImg,
       preview: preview6,
-      desc: "Creative branding, marketing and digital design studio."
+      desc: "Creative branding, marketing and digital design studio.",
     },
     {
       title: "Helaya Clinic",
       icon: helayaClinicImg,
       preview: preview7,
-      desc: "Clinical consultations and preventive healthcare services."
+      desc: "Clinical consultations and preventive healthcare services.",
     },
     {
       title: "Expia",
       icon: expiaImg,
       preview: preview8,
-      desc: "Premium wellness and nutritional supplement brand."
-    }
+      desc: "Premium wellness and nutritional supplement brand.",
+    },
   ];
 
+  // ----------------------------------------------------
+  // RENDER
+  // ----------------------------------------------------
   return (
     <div className="business-buttons-container">
       {items.map((btn, index) => (
         <div
           key={index}
-          className="business-btn-card"
-          onMouseEnter={() =>
+          className={`business-btn-card ${activeIndex === index ? "active" : ""}`}
+          onMouseEnter={() => {
+            setActiveIndex(index);
             onHoverChange({
               title: btn.title,
               desc: btn.desc,
-              preview: btn.preview
-            })
-          }
-          onMouseLeave={() =>
-            onHoverChange({
-              title: "Business Overview",
-              desc: "Hover over a business to see details.",
-              preview: null
-            })
-          }
+              preview: btn.preview,
+            });
+          }}
+          onMouseLeave={() => {
+            setActiveIndex(null);
+            onHoverChange(resetPreview); // ⭐ Correct default restore
+          }}
         >
           <img src={btn.icon} className="business-btn-img" alt={btn.title} />
+
           <div className="business-btn-overlay">
             <h3>{btn.title}</h3>
           </div>
