@@ -101,7 +101,6 @@
   align-items: flex-start;
 }
 
-/* LEFT PREVIEW BOX */
 .business-left-content {
   flex: 1.2;
   padding: 10px;
@@ -109,20 +108,20 @@
 
 .business-preview-image {
   width: 100%;
-  height: 420px; /* optimized */
+  height: 420px;
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* Remove old text */
+/* Hide text */
 .hover-title,
 .hover-description {
   display: none !important;
 }
 
 /* ---------------------------------------------------
-        UPDATED BUTTON GRID — PREMIUM MEDICAL UI
+        BUTTON GRID — PREMIUM MEDICAL UI
 ----------------------------------------------------- */
 .business-buttons-container {
   flex: 1.5;
@@ -136,7 +135,7 @@
   background: linear-gradient(to bottom, #f7f9fc, #e3e7eb);
   border-radius: 20px;
   padding: 18px;
-  height: 180px; /* optimized */
+  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -154,7 +153,7 @@
 }
 
 .business-btn-img {
-  width: 75px; /* optimized */
+  width: 75px;
   height: 75px;
   object-fit: contain;
   filter: drop-shadow(0px 3px 4px rgba(0,0,0,0.22));
@@ -167,7 +166,7 @@
 }
 
 .business-btn-overlay h3 {
-  font-size: 0.95rem; /* slightly smaller */
+  font-size: 0.95rem;
   font-weight: 600;
   color: #003d73;
   margin-top: 10px;
@@ -178,34 +177,36 @@
   color: white;
 }
 
-/* ---------------------- WHY CHOOSE US ---------------------- */
+/* ---------------------- WHY PATIENTS CHOOSE US (UPDATED TO MATCH YOUR DESIGN) ---------------------- */
+
 .choose-section {
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 80px 8%; /* increased spacing */
-  gap: 70px;
-  background: #fff;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 70px 10%;
 }
 
 .choose-left {
   flex: 1;
-  max-width: 550px;
 }
 
 .choose-left h2 {
-  font-size: 32px;
-  color: #0a2540;
+  font-size: 34px;
   font-weight: 700;
-  margin-bottom: 20px;
+  color: #0a2540;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .choose-left p {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 15px;
+  font-size: 15px;
   color: #333;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  max-width: 600px;
 }
 
 .choose-right {
@@ -216,8 +217,7 @@
 
 .choose-right img {
   width: 100%;
-  max-width: 520px; /* slightly reduced for balance */
-  border-radius: 14px;
+  max-width: 600px;
   object-fit: cover;
 }
 
@@ -238,9 +238,14 @@
   .business-preview-image {
     height: 350px;
   }
+
   .choose-section {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
+  }
+
+  .choose-right {
+    justify-content: center;
   }
 }
 

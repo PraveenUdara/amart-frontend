@@ -117,9 +117,9 @@ const Home = () => {
         />
       </div>
 
-      {/* ⭐ WHY CHOOSE US SECTION */}
+      {/* ⭐ UPDATED WHY CHOOSE US SECTION — TEXT LEFT + IMAGE RIGHT */}
       <section className="choose-section">
-        <div className="choose-content">
+        <div className="choose-left">
           <h2>Why Patients Choose Us</h2>
 
           <p>
@@ -137,10 +137,11 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="choose-image">
+        <div className="choose-right">
           <img src={doctorsImg} alt="Medical Team" />
         </div>
       </section>
+
     </div>
   );
 };
