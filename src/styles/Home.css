@@ -257,3 +257,79 @@
     height: 270px;
   }
 }
+/* ---------------------- QUALITY DATA SECTION ---------------------- */
+
+.quality-section {
+  width: 100%;
+  padding: 60px 10%;
+  margin-top: 40px;
+}
+
+.quality-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0a2540;
+  margin-bottom: 35px;
+}
+
+.quality-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.quality-card {
+  background: #002f5f;
+  padding: 25px 30px;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.quality-card h3 {
+  font-size: 34px;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.divider {
+  width: 2px;
+  height: 45px;
+  background: #00c4ff;
+  border-radius: 10px;
+}
+
+.quality-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ---------------------- RESPONSIVE (QUALITY SECTION) ---------------------- */
+
+@media (max-width: 1100px) {
+  .quality-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .quality-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .quality-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .divider {
+    width: 80%;
+    height: 2px;
+  }
+}

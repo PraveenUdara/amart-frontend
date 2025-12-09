@@ -84,7 +84,9 @@ const Home = () => {
           <div className="post-overlay">
             <h2>Introducing</h2>
             <h1>Latest Diagnostic Services</h1>
-            <p>We bring advanced diagnostic services to Sri Lanka through leading labs.</p>
+            <p>
+              We bring advanced diagnostic services to Sri Lanka through leading labs.
+            </p>
           </div>
         </div>
 
@@ -93,15 +95,15 @@ const Home = () => {
           <div className="post-overlay">
             <h2>Introducing</h2>
             <h1>Latest Technologies</h1>
-            <p>We introduce AI-driven technologies for healthcare, retail and finance.</p>
+            <p>
+              We introduce AI-driven technologies for healthcare, retail and finance.
+            </p>
           </div>
         </div>
       </div>
 
       {/* ⭐ BUSINESS SECTION — PREVIEW LEFT + GRID RIGHT */}
       <div className="business-section-wrapper">
-
-        {/* LEFT PREVIEW — IMAGE ONLY */}
         <div className="business-left-content">
           <img
             src={hoverData?.preview || defaultPreview}
@@ -110,14 +112,13 @@ const Home = () => {
           />
         </div>
 
-        {/* RIGHT BUTTON GRID */}
         <BusinessButtons
           onHoverChange={setHoverData}
           resetPreview={() => setHoverData(defaultHoverData)}
         />
       </div>
 
-      {/* ⭐ UPDATED WHY CHOOSE US SECTION — TEXT LEFT + IMAGE RIGHT */}
+      {/* ⭐ UPDATED WHY CHOOSE US SECTION */}
       <section className="choose-section">
         <div className="choose-left">
           <h2>Why Patients Choose Us</h2>
@@ -139,6 +140,51 @@ const Home = () => {
 
         <div className="choose-right">
           <img src={doctorsImg} alt="Medical Team" />
+        </div>
+      </section>
+
+      {/* ⭐⭐ QUALITY DATA SECTION ⭐⭐ */}
+      <section className="quality-section">
+        <h2 className="quality-title">Quality Data</h2>
+
+        <div className="quality-grid">
+
+          <div className="quality-card">
+            <h3>94.82%</h3>
+            <span className="divider"></span>
+            <p>Patient Satisfaction Rate on Services</p>
+          </div>
+
+          <div className="quality-card">
+            <h3>97.30%</h3>
+            <span className="divider"></span>
+            <p>Compliance to Correct Patient Identification</p>
+          </div>
+
+          <div className="quality-card">
+            <h3>88.33%</h3>
+            <span className="divider"></span>
+            <p>Hand Hygiene Compliance</p>
+          </div>
+
+          <div className="quality-card">
+            <h3>0.09%</h3>
+            <span className="divider"></span>
+            <p>Rate of Hospital Acquired Infections</p>
+          </div>
+
+          <div className="quality-card">
+            <h3>0.17%</h3>
+            <span className="divider"></span>
+            <p>Adverse Drug Reaction</p>
+          </div>
+
+          <div className="quality-card">
+            <h3>0.00%</h3>
+            <span className="divider"></span>
+            <p>Rate of Hospital Acquired Bed Sores</p>
+          </div>
+
         </div>
       </section>
 
