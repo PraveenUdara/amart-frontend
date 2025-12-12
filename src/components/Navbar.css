@@ -1,19 +1,37 @@
 /* --------------------------------------------- */
-/*          PREMIUM MODERN NAVIGATION BAR        */
+/*        GLASSMORPHISM NAVIGATION BAR            */
 /* --------------------------------------------- */
 
 .navbar {
   width: 100%;
-  background: #ffffff;
-  border-bottom: 1px solid #e5eef7;
   padding: 14px 32px;
   position: sticky;
   top: 0;
   z-index: 3000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   font-family: "Poppins", sans-serif;
+
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+
+  transition: background 0.35s ease, box-shadow 0.35s ease;
 }
 
+/* ---------- HOME PAGE (OVER HERO IMAGE) ---------- */
+body.home-page .navbar {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: none;
+  box-shadow: none;
+  position: absolute;
+}
+
+/* Keep navbar content above hero */
 .navbar-inner {
   max-width: 1250px;
   margin: auto;
@@ -22,7 +40,10 @@
   align-items: center;
 }
 
+/* --------------------------------------------- */
 /* LOGO */
+/* --------------------------------------------- */
+
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -31,16 +52,22 @@
 
 .nav-logo-img {
   height: 55px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
 }
 
 .nav-logo-text {
   font-size: 1.4rem;
   font-weight: 700;
+  color: #ffffff;
+}
+
+/* Dark logo text on non-home pages */
+body:not(.home-page) .nav-logo-text {
   color: #003d73;
 }
 
 /* --------------------------------------------- */
-/*                NAVIGATION LINKS               */
+/* NAV LINKS */
 /* --------------------------------------------- */
 
 .nav-links {
@@ -49,18 +76,22 @@
   align-items: center;
 }
 
-/* Base link */
 .nav-link {
   position: relative;
   text-decoration: none;
-  color: #003d73;
   font-size: 1.05rem;
   font-weight: 500;
+  color: #ffffff;
   padding-bottom: 4px;
-  transition: 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-/* Underline animation */
+/* Dark links on other pages */
+body:not(.home-page) .nav-link {
+  color: #003d73;
+}
+
+/* Underline */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -68,7 +99,7 @@
   left: 0;
   width: 0%;
   height: 2px;
-  background: #003d73;
+  background: currentColor;
   transition: width 0.3s ease;
 }
 
@@ -78,7 +109,7 @@
 }
 
 /* --------------------------------------------- */
-/*                  DROPDOWN                     */
+/* DROPDOWN */
 /* --------------------------------------------- */
 
 .nav-dropdown {
@@ -86,10 +117,12 @@
 }
 
 .dropdown-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  background: none;
+  border: none;
   cursor: pointer;
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
 
 /* Dropdown box */
@@ -97,18 +130,14 @@
   position: absolute;
   top: 34px;
   left: 0;
-  background: #ffffff;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
   width: 240px;
   border-radius: 12px;
   padding: 10px 0;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  animation: fadeIn 0.25s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
   z-index: 2000;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  animation: fadeIn 0.25s ease;
 }
 
 .dropdown-item {
@@ -117,7 +146,7 @@
   color: #003d73;
   font-size: 0.95rem;
   display: block;
-  transition: 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .dropdown-item:hover {
@@ -135,7 +164,7 @@
 }
 
 /* --------------------------------------------- */
-/*               MOBILE MENU                     */
+/* MOBILE MENU */
 /* --------------------------------------------- */
 
 .hamburger {
@@ -154,9 +183,14 @@
   .hamburger span {
     width: 28px;
     height: 3px;
+    background: #ffffff;
+  }
+
+  body:not(.home-page) .hamburger span {
     background: #003d73;
   }
 
+  /* MOBILE MENU PANEL (SOLID, NOT BLUR) */
   .nav-links {
     position: fixed;
     top: 80px;
@@ -168,15 +202,30 @@
     transform: translateY(-150%);
     transition: 0.35s ease-in-out;
     gap: 28px;
+    z-index: 2500;
   }
 
   .nav-links.mobile-open {
     transform: translateY(0);
   }
 
+  .nav-links .nav-link {
+    color: #003d73 !important;
+  }
+
   .dropdown-menu {
     position: static;
-    box-shadow: none;
     width: 100%;
+    box-shadow: none;
+    backdrop-filter: none;
   }
+}
+
+/* --------------------------------------------- */
+/* ANIMATION */
+/* --------------------------------------------- */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }

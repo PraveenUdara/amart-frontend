@@ -1,0 +1,200 @@
+/* ---------------------- EVENTS PAGE ---------------------- */
+.events-page {
+  width: 100%;
+  background: #f5f7fa;
+  padding: 60px 20px;
+}
+
+.events-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------------------- HEADER ---------------------- */
+.events-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.events-header h1 {
+  font-size: 2.4rem;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.events-header p {
+  color: #607d8b;
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------------------- EVENT SECTION ---------------------- */
+.event-section {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 50px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.event-section h2 {
+  font-size: 1.5rem;
+  color: #0d47a1;
+  margin-bottom: 6px;
+}
+
+.event-section h4 {
+  font-size: 1rem;
+  color: #546e7a;
+  margin-bottom: 10px;
+}
+
+.event-section p {
+  font-size: 0.95rem;
+  color: #37474f;
+  margin-bottom: 6px;
+}
+
+/* ---------------------- IMAGE GALLERY ---------------------- */
+.event-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.event-gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.event-gallery img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------------------- LIGHTBOX (BIG IMAGE VIEW) ---------------------- */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 15, 25, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  animation: zoomIn 0.35s ease;
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* CLOSE BUTTON */
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  background: #ffffff;
+  color: #333;
+  font-size: 26px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 38px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.1);
+}
+
+/* ---------------------- ANIMATIONS ---------------------- */
+.fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.88); }
+  to { transform: scale(1); }
+}
+
+/* ---------------------- RESPONSIVE ---------------------- */
+@media (max-width: 768px) {
+  .events-header h1 {
+    font-size: 2rem;
+  }
+
+  .event-section {
+    padding: 22px;
+  }
+
+  .event-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .event-gallery img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-header p {
+    font-size: 0.95rem;
+  }
+
+  .event-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .event-gallery img {
+    height: 140px;
+  }
+
+  .lightbox-close {
+    top: -10px;
+    right: -10px;
+  }
+}

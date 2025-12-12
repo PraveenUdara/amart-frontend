@@ -19,18 +19,24 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar">
+    <nav className="navbar navbar-overlay">
       <div className="navbar-inner">
 
         {/* LOGO */}
         <div className="navbar-logo">
-          <img src={logo} className="nav-logo-img" alt="logo" />
+          <img src={logo} className="nav-logo-img" alt="A Mart Holdings Logo" />
           <p className="nav-logo-text">A Mart Holdings</p>
         </div>
 
-        {/* Mobile menu button */}
-        <div className="hamburger" onClick={() => setMobileMenu(!mobileMenu)}>
-          <span></span><span></span><span></span>
+        {/* MOBILE HAMBURGER */}
+        <div
+          className={`hamburger ${mobileMenu ? "open" : ""}`}
+          onClick={() => setMobileMenu(!mobileMenu)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
         {/* LINKS */}
@@ -39,7 +45,9 @@ const Navbar = () => {
           <NavLink
             to="/"
             end
-            className={({ isActive }) => isActive ? "nav-link active-line" : "nav-link"}
+            className={({ isActive }) =>
+              isActive ? "nav-link active-line" : "nav-link"
+            }
             onClick={() => setMobileMenu(false)}
           >
             Home
@@ -47,7 +55,9 @@ const Navbar = () => {
 
           <NavLink
             to="/about"
-            className={({ isActive }) => isActive ? "nav-link active-line" : "nav-link"}
+            className={({ isActive }) =>
+              isActive ? "nav-link active-line" : "nav-link"
+            }
             onClick={() => setMobileMenu(false)}
           >
             About Us
@@ -55,12 +65,14 @@ const Navbar = () => {
 
           {/* BUSINESS DROPDOWN */}
           <div className="nav-dropdown">
-            <span
+            <button
               className="nav-link dropdown-btn"
               onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
             >
-              Business <span className={isOpen ? "arrow up" : "arrow"}>▼</span>
-            </span>
+              Business
+              <span className={isOpen ? "arrow up" : "arrow"}>▼</span>
+            </button>
 
             {isOpen && (
               <div className="dropdown-menu">
@@ -83,7 +95,9 @@ const Navbar = () => {
 
           <NavLink
             to="/events"
-            className={({ isActive }) => isActive ? "nav-link active-line" : "nav-link"}
+            className={({ isActive }) =>
+              isActive ? "nav-link active-line" : "nav-link"
+            }
             onClick={() => setMobileMenu(false)}
           >
             Events
@@ -91,7 +105,9 @@ const Navbar = () => {
 
           <NavLink
             to="/contact"
-            className={({ isActive }) => isActive ? "nav-link active-line" : "nav-link"}
+            className={({ isActive }) =>
+              isActive ? "nav-link active-line" : "nav-link"
+            }
             onClick={() => setMobileMenu(false)}
           >
             Contact Us

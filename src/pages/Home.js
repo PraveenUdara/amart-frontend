@@ -22,18 +22,21 @@ import defaultPreview from "../assets/businessPreview/default.jpg";
 const HERO_IMAGES = [homeBg, doctorHero, diagnosticsHero, techHero];
 
 const Home = () => {
-  /* --------------------------- HERO SLIDER --------------------------- */
   const [heroIndex, setHeroIndex] = useState(0);
 
   useEffect(() => {
+    document.body.classList.add("home-page");
+
     const interval = setInterval(() => {
       setHeroIndex((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 4000);
 
-    return () => clearInterval(interval);
+    return () => {
+      document.body.classList.remove("home-page");
+      clearInterval(interval);
+    };
   }, []);
 
-  /* ---------------------- BUSINESS PREVIEW STATE ---------------------- */
   const defaultHoverData = {
     preview: defaultPreview,
   };
@@ -43,8 +46,8 @@ const Home = () => {
   return (
     <div className="home">
 
-      {/* ⭐ HERO SECTION WITH FADE SLIDER */}
-      <div className="hero-section">
+      {/* ⭐ FULLSCREEN HERO SECTION */}
+      <section className="hero-section">
         {HERO_IMAGES.map((img, index) => (
           <img
             key={index}
@@ -54,31 +57,23 @@ const Home = () => {
           />
         ))}
 
-        <div className="hero-overlay">
-          <div className="hero-content">
-            <h1 className="hero-title">Welcome to A Mart Holdings</h1>
+        {/* ⭐ RIGHT-BOTTOM HERO TEXT */}
+        <div className="hero-overlay hero-overlay-right">
+          <div className="hero-content hero-content-right">
+            <h1 className="hero-title fade-in delay-1">
+              Welcome to A Mart Holdings
+            </h1>
 
-            <p className="hero-text">
-              A Mart Holdings partners with world-renowned healthcare providers,
-              pharmaceutical manufacturers and diagnostic laboratories to bring
-              the latest medical technology to Sri Lanka.
-            </p>
-
-            <p className="hero-text">
-              We facilitate diagnostics, oncology, hematology and rare disease
-              testing through leading international labs.
-            </p>
-
-            <p className="hero-text">
-              Our medical tourism arm connects patients to top hospitals in
-              Singapore and India.
+            <p className="hero-text hero-text-strong fade-in delay-2">
+              One of Sri Lanka’s fastest-growing conglomerates, built on
+              innovation, leadership, and trust.
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* ⭐ MINI POSTS SECTION */}
-      <div className="home-post-section">
+      <section className="home-post-section">
         <div className="home-post-card">
           <img src={leftPost} alt="Diagnostics" className="post-img" />
           <div className="post-overlay">
@@ -100,10 +95,10 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ⭐ BUSINESS SECTION — PREVIEW LEFT + GRID RIGHT */}
-      <div className="business-section-wrapper">
+      {/* ⭐ BUSINESS SECTION */}
+      <section className="business-section-wrapper">
         <div className="business-left-content">
           <img
             src={hoverData?.preview || defaultPreview}
@@ -116,9 +111,9 @@ const Home = () => {
           onHoverChange={setHoverData}
           resetPreview={() => setHoverData(defaultHoverData)}
         />
-      </div>
+      </section>
 
-      {/* ⭐ UPDATED WHY CHOOSE US SECTION */}
+      {/* ⭐ WHY CHOOSE US */}
       <section className="choose-section">
         <div className="choose-left">
           <h2>Why Patients Choose Us</h2>
@@ -143,12 +138,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ⭐⭐ QUALITY DATA SECTION ⭐⭐ */}
+      {/* ⭐ QUALITY DATA */}
       <section className="quality-section">
         <h2 className="quality-title">Quality Data</h2>
 
         <div className="quality-grid">
-
           <div className="quality-card">
             <h3>94.82%</h3>
             <span className="divider"></span>
@@ -184,7 +178,6 @@ const Home = () => {
             <span className="divider"></span>
             <p>Rate of Hospital Acquired Bed Sores</p>
           </div>
-
         </div>
       </section>
 

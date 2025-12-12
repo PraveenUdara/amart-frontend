@@ -11,20 +11,20 @@ const Footer = () => {
       {/* TOP SECTION */}
       <div className="footer-top">
 
-        {/* Column 1: Logo + Company Info */}
+        {/* Column 1: Logo + Address */}
         <div className="footer-col">
           <img src={logo} alt="A Mart Holdings" className="footer-logo" />
 
-          <h3 className="footer-heading">A Mart Holdings</h3>
+          <h3 className="footer-heading">A Mart Holdings (Pvt) Ltd</h3>
 
-          <p className="footer-text">
-            City Center, No.12,<br />
+          <p className="footer-text location">
+            #12 City Center,<br />
             Sunethradevi Road,<br />
-            Kohuwala, Sri Lanka
+            10250, Sri Lanka
           </p>
         </div>
 
-        {/* Column 2: Contact Information */}
+        {/* Column 2: Contact */}
         <div className="footer-col">
           <h3 className="footer-heading">Contact</h3>
 
@@ -34,26 +34,25 @@ const Footer = () => {
             +94 77 7648 888
           </p>
 
-          <p className="footer-text">Email: info@amartholdings.com</p>
+          <p className="footer-text">
+            Email: info@amartholdings.com
+          </p>
         </div>
 
-        {/* Column 3: Social Media */}
-        <div className="footer-col">
-          <h3 className="footer-heading">Find Us On</h3>
+        {/* Column 3: Google Map */}
+        <div className="footer-col footer-map-col">
+          <h3 className="footer-heading">Our Location</h3>
 
-          <a
-            href="https://www.facebook.com/amartholdings/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-social-btn"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/124/124010.png"
-              className="footer-social-icon"
-              alt="Facebook"
-            />
-            Facebook
-          </a>
+          <div className="footer-map-card">
+            <iframe
+              className="footer-map"
+              title="A Mart Holdings Location"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=A%20Mart%20Holdings%20(Pvt)%20Ltd,%20City%20Center,%20Sunethradevi%20Road&output=embed"
+            ></iframe>
+          </div>
         </div>
 
         {/* Column 4: Business Links */}
@@ -72,10 +71,10 @@ const Footer = () => {
 
       </div>
 
-      {/* Bottom Divider */}
+      {/* Divider */}
       <div className="footer-divider"></div>
 
-      {/* COPYRIGHT */}
+      {/* Copyright */}
       <div className="footer-bottom">
         © {new Date().getFullYear()} A Mart Holdings. All rights reserved.
       </div>
