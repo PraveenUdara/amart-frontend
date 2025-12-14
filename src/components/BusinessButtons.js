@@ -12,6 +12,7 @@ import helayaInternationalImg from "../assets/helaya_international.jpg";
 import brandingImg from "../assets/amart_branding.jpg";
 import helayaClinicImg from "../assets/helaya_clinic.jpg";
 import expiaImg from "../assets/expia.jpg";
+import manufactureImg from "../assets/manufacture.jpg"; // ⭐ NEW
 
 // Preview images
 import preview1 from "../assets/businessPreview/1.jpg";
@@ -22,6 +23,7 @@ import preview5 from "../assets/businessPreview/5.jpg";
 import preview6 from "../assets/businessPreview/6.jpg";
 import preview7 from "../assets/businessPreview/7.jpg";
 import preview8 from "../assets/businessPreview/8.jpg";
+import preview9 from "../assets/businessPreview/9.jpg"; // ⭐ NEW
 
 const BusinessButtons = ({ onHoverChange, resetPreview }) => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -75,11 +77,14 @@ const BusinessButtons = ({ onHoverChange, resetPreview }) => {
       preview: preview8,
       desc: "Premium wellness and nutritional supplement brand.",
     },
+    {
+      title: "Manufacturing",
+      icon: manufactureImg,
+      preview: preview9,
+      desc: "Pharmaceutical and healthcare manufacturing with quality-driven processes.",
+    },
   ];
 
-  // ----------------------------------------------------
-  // RENDER
-  // ----------------------------------------------------
   return (
     <div className="business-buttons-container">
       {items.map((btn, index) => (
@@ -96,11 +101,10 @@ const BusinessButtons = ({ onHoverChange, resetPreview }) => {
           }}
           onMouseLeave={() => {
             setActiveIndex(null);
-            onHoverChange(resetPreview); // ⭐ Correct default restore
+            onHoverChange(resetPreview);
           }}
         >
           <img src={btn.icon} className="business-btn-img" alt={btn.title} />
-
           <div className="business-btn-overlay">
             <h3>{btn.title}</h3>
           </div>

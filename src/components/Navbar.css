@@ -1,49 +1,41 @@
-/* --------------------------------------------- */
-/*        GLASSMORPHISM NAVIGATION BAR            */
-/* --------------------------------------------- */
+/* =================================================
+   COMPACT GLASS NAVBAR – MODERN & MINIMAL
+================================================= */
 
 .navbar {
   width: 100%;
-  padding: 14px 32px;
+  height: 64px; /* 🔥 smaller height */
+  padding: 0 28px;
   position: sticky;
   top: 0;
   z-index: 3000;
   font-family: "Poppins", sans-serif;
 
-  /* Glass effect */
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 
-  transition: background 0.35s ease, box-shadow 0.35s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ---------- HOME PAGE (OVER HERO IMAGE) ---------- */
-body.home-page .navbar {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: none;
-  box-shadow: none;
-  position: absolute;
-}
 
-/* Keep navbar content above hero */
+
+/* INNER */
 .navbar-inner {
-  max-width: 1250px;
+  max-width: 1280px;
+  height: 100%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
-/* --------------------------------------------- */
-/* LOGO */
-/* --------------------------------------------- */
-
+/* =================================================
+   LOGO
+================================================= */
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -51,56 +43,51 @@ body.home-page .navbar {
 }
 
 .nav-logo-img {
-  height: 55px;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  height: 40px; /* 🔥 smaller logo */
 }
 
 .nav-logo-text {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 600;
   color: #ffffff;
 }
 
-/* Dark logo text on non-home pages */
 body:not(.home-page) .nav-logo-text {
-  color: #003d73;
+  color: #0a2540;
 }
 
-/* --------------------------------------------- */
-/* NAV LINKS */
-/* --------------------------------------------- */
-
+/* =================================================
+   NAV LINKS
+================================================= */
 .nav-links {
   display: flex;
-  gap: 38px;
   align-items: center;
+  gap: 28px;
 }
 
 .nav-link {
-  position: relative;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: #ffffff;
-  padding-bottom: 4px;
-  transition: color 0.3s ease;
+  position: relative;
+  padding: 4px 0;
 }
 
-/* Dark links on other pages */
 body:not(.home-page) .nav-link {
-  color: #003d73;
+  color: #0a2540;
 }
 
-/* Underline */
+/* underline */
 .nav-link::after {
   content: "";
   position: absolute;
-  bottom: -2px;
   left: 0;
+  bottom: -3px;
   width: 0%;
   height: 2px;
   background: currentColor;
-  transition: width 0.3s ease;
+  transition: width 0.25s ease;
 }
 
 .nav-link:hover::after,
@@ -108,10 +95,84 @@ body:not(.home-page) .nav-link {
   width: 100%;
 }
 
-/* --------------------------------------------- */
-/* DROPDOWN */
-/* --------------------------------------------- */
+/* =================================================
+   SEARCH BAR (DESKTOP)
+================================================= */
+.nav-search {
+  position: relative;
+}
 
+/* ================= SEARCH BAR (IMPROVED) ================= */
+
+.nav-search {
+  position: relative;
+}
+
+.nav-search input {
+  height: 38px;
+  width: 220px;
+  border-radius: 999px;
+
+  /* ✅ Visible outline */
+  border: 1.5px solid #d6e2f0;
+
+  padding: 0 16px 0 40px;
+  font-size: 0.9rem;
+  outline: none;
+
+  background: #ffffff;
+  color: #0a2540;
+
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Placeholder */
+.nav-search input::placeholder {
+  color: #8aa0b5;
+}
+
+/* Hover */
+.nav-search input:hover {
+  border-color: #b5c9e6;
+}
+
+/* Focus (important) */
+.nav-search input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+/* Search icon */
+.nav-search::before {
+  content: "🔍";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+
+.nav-search input::placeholder {
+  color: #607d8b;
+}
+
+/* Search icon */
+.nav-search::before {
+  content: "🔍";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* =================================================
+   DROPDOWN
+================================================= */
 .nav-dropdown {
   position: relative;
 }
@@ -121,32 +182,30 @@ body:not(.home-page) .nav-link {
   border: none;
   cursor: pointer;
   display: flex;
-  gap: 6px;
   align-items: center;
+  gap: 6px;
 }
 
-/* Dropdown box */
 .dropdown-menu {
   position: absolute;
-  top: 34px;
+  top: 42px;
   left: 0;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(12px);
-  width: 240px;
-  border-radius: 12px;
-  padding: 10px 0;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-  z-index: 2000;
+  width: 230px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 8px 0;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
   animation: fadeIn 0.25s ease;
+  z-index: 2000;
 }
 
 .dropdown-item {
-  padding: 12px 20px;
+  padding: 12px 18px;
   text-decoration: none;
-  color: #003d73;
-  font-size: 0.95rem;
+  color: #0a2540;
+  font-size: 0.9rem;
   display: block;
-  transition: background 0.2s ease;
 }
 
 .dropdown-item:hover {
@@ -155,7 +214,7 @@ body:not(.home-page) .nav-link {
 
 /* Arrow */
 .arrow {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   transition: transform 0.2s ease;
 }
 
@@ -163,45 +222,47 @@ body:not(.home-page) .nav-link {
   transform: rotate(180deg);
 }
 
-/* --------------------------------------------- */
-/* MOBILE MENU */
-/* --------------------------------------------- */
-
+/* =================================================
+   MOBILE
+================================================= */
 .hamburger {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+
+  .nav-search {
+    display: none; /* hide search on mobile */
+  }
 
   .hamburger {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
     cursor: pointer;
   }
 
   .hamburger span {
-    width: 28px;
+    width: 26px;
     height: 3px;
     background: #ffffff;
   }
 
   body:not(.home-page) .hamburger span {
-    background: #003d73;
+    background: #0a2540;
   }
 
-  /* MOBILE MENU PANEL (SOLID, NOT BLUR) */
   .nav-links {
     position: fixed;
-    top: 80px;
+    top: 64px;
     left: 0;
     width: 100%;
     background: #ffffff;
     flex-direction: column;
-    padding: 40px 0;
+    padding: 30px 0;
+    gap: 22px;
     transform: translateY(-150%);
-    transition: 0.35s ease-in-out;
-    gap: 28px;
+    transition: 0.35s ease;
     z-index: 2500;
   }
 
@@ -210,7 +271,8 @@ body:not(.home-page) .nav-link {
   }
 
   .nav-links .nav-link {
-    color: #003d73 !important;
+    color: #0a2540 !important;
+    font-size: 1rem;
   }
 
   .dropdown-menu {
@@ -221,11 +283,16 @@ body:not(.home-page) .nav-link {
   }
 }
 
-/* --------------------------------------------- */
-/* ANIMATION */
-/* --------------------------------------------- */
-
+/* =================================================
+   ANIMATION
+================================================= */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

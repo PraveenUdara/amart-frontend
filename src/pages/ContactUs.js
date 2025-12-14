@@ -3,29 +3,53 @@ import React from "react";
 import "../index.css";
 import "../styles/ContactUs.css";
 
+// 🔹 CONTACT COVER IMAGE
+import contactCover from "../assets/contact_cover.jpg";
+
 const ContactUs = () => {
   return (
     <div className="contact-page">
 
-      {/* ------------------- TOP SECTION: MESSAGE + FORM ------------------- */}
+      {/* ================= CONTACT HERO (COVER) ================= */}
+      <section className="contact-hero">
+        <img
+          src={contactCover}
+          alt="Contact Us Cover"
+          className="contact-hero-img"
+        />
+
+        <div className="contact-hero-overlay">
+          <h1 className="contact-hero-title fade-in-up">
+            Contact Us
+          </h1>
+          <p className="contact-hero-sub fade-in-up delay-1">
+            We’re here to help. Reach out to A Mart Holdings anytime.
+          </p>
+        </div>
+      </section>
+
+      {/* ================= TOP SECTION: MESSAGE + FORM ================= */}
       <div className="contact-top-section">
 
         {/* LEFT SIDE MESSAGE */}
-        <div className="help-text">
+        <div className="help-text fade-up">
           <h2>We are here to help!</h2>
           <p>
             Let us know how we can best serve you. Use the contact form to email us,
-            and we will reply as soon as possible. It’s our honor to support you on
-            your journey toward better health and wellbeing.
+            and we will reply as soon as possible.
+          </p>
+          <p>
+            It’s our honor to support you on your journey toward better health
+            and wellbeing.
           </p>
         </div>
 
         {/* RIGHT SIDE FORM */}
-        <div className="form-wrapper">
+        <div className="form-wrapper fade-up delay-1">
           <div className="contact-container">
-            <h1 className="contact-title">Contact Us</h1>
+            <h1 className="contact-title">Send Us a Message</h1>
             <p className="contact-subtitle">
-              Send us your inquiries or feedback. We will respond as soon as possible.
+              Our team will respond as soon as possible.
             </p>
 
             <form
@@ -35,11 +59,15 @@ const ContactUs = () => {
                 alert("Thank you! Your message has been sent.");
               }}
             >
-              {/* Name + Phone SIDE BY SIDE */}
+              {/* Name + Phone */}
               <div className="two-column">
                 <div className="form-group">
                   <label className="form-label">Name</label>
-                  <input className="form-input" placeholder="Your name" required />
+                  <input
+                    className="form-input"
+                    placeholder="Your name"
+                    required
+                  />
                 </div>
 
                 <div className="form-group">
@@ -83,11 +111,11 @@ const ContactUs = () => {
 
       </div>
 
-      {/* ------------------- MAP + INFO SECTION ------------------- */}
+      {/* ================= MAP + INFO SECTION ================= */}
       <div className="map-info-section">
 
-        {/* LEFT: GOOGLE MAP */}
-        <div className="map-container">
+        {/* GOOGLE MAP */}
+        <div className="map-container fade-up">
           <iframe
             title="A Mart Location"
             width="100%"
@@ -99,8 +127,8 @@ const ContactUs = () => {
           ></iframe>
         </div>
 
-        {/* RIGHT: CONTACT DETAILS PANEL */}
-        <div className="info-panel">
+        {/* CONTACT DETAILS */}
+        <div className="info-panel fade-up delay-1">
           <h2 className="info-title">ADDRESS</h2>
           <p className="info-text">
             A Mart Holdings (Pvt) Ltd <br />
@@ -121,11 +149,10 @@ const ContactUs = () => {
         </div>
       </div>
 
-      {/* ------------------- BOTTOM BOX SECTION ------------------- */}
+      {/* ================= BOTTOM BOXES ================= */}
       <div className="bottom-boxes">
 
-        {/* LEFT BOX */}
-        <div className="box get-direction-box">
+        <div className="box get-direction-box fade-up">
           <h3>Get Directions</h3>
           <a
             href="https://www.google.com/maps?q=A%20Mart%20Holdings%20(Pvt)%20Ltd,%20City%20Center,%20Sunethradevi%20Rd,%20Kohuwala"
@@ -136,8 +163,7 @@ const ContactUs = () => {
           </a>
         </div>
 
-        {/* RIGHT BOX */}
-        <div className="box open-hours-box">
+        <div className="box open-hours-box fade-up delay-1">
           <h3>Open Hours</h3>
           <p>Mon – Fri: 8.00 am – 5.00 pm</p>
           <p>Sat – Sun: Closed</p>

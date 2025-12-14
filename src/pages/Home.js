@@ -25,7 +25,8 @@ const Home = () => {
   const [heroIndex, setHeroIndex] = useState(0);
 
   useEffect(() => {
-    document.body.classList.add("home-page");
+    document.body.classList.remove("home-page");
+
 
     const interval = setInterval(() => {
       setHeroIndex((prev) => (prev + 1) % HERO_IMAGES.length);

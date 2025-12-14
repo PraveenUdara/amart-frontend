@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import "../styles/Events.css";
 
+// 🔹 EVENTS COVER IMAGE
+import eventsCover from "../assets/events_cover.jpg";
+
 /* AUTO IMPORT ALL IMAGES FROM FOLDERS */
 const importAll = (r) => r.keys().map(r);
 
@@ -34,16 +37,27 @@ const Events = () => {
 
   return (
     <div className="events-page">
-      <div className="events-container">
 
-        {/* HEADER */}
-        <div className="events-header">
-          <h1>Events</h1>
-          <p>
-            A Mart Holdings proudly supports academic, clinical, and professional
-            medical programs across Sri Lanka.
+      {/* ================= EVENTS COVER ================= */}
+      <section className="events-hero">
+        <img
+          src={eventsCover}
+          alt="Events Cover"
+          className="events-hero-img"
+        />
+
+        <div className="events-hero-overlay">
+          <h1 className="events-hero-title fade-in-up">
+            Our Events
+          </h1>
+          <p className="events-hero-sub fade-in-up delay-1">
+            Academic sessions, master classes & professional medical programs
           </p>
         </div>
+      </section>
+
+      {/* ================= EVENTS CONTENT ================= */}
+      <div className="events-container">
 
         {/* EVENT 01 */}
         <div className="event-section fade-up">
@@ -105,7 +119,7 @@ const Events = () => {
 
       </div>
 
-      {/* ---------- IMAGE LIGHTBOX ---------- */}
+      {/* ================= IMAGE LIGHTBOX ================= */}
       {selectedImage && (
         <div
           className="lightbox-overlay"
@@ -125,6 +139,7 @@ const Events = () => {
           </div>
         </div>
       )}
+
     </div>
   );
 };
