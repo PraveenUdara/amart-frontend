@@ -6,7 +6,7 @@ import BusinessButtons from "../components/BusinessButtons";
 // HERO IMAGES
 import homeBg from "../assets/home_bg.jpg";
 import doctorHero from "../assets/hero_diagnostics.jpg";
-import diagnosticsHero from "../assets/hero_diagnostics.jpg";
+import diagnosticsHero from "../assets/labcv.jpg";
 import techHero from "../assets/hero_tech_healthcare.jpg";
 
 // MINI POSTS
@@ -16,28 +16,50 @@ import doctorsImg from "../assets/doctors.png";
 
 import "../styles/Home.css";
 
-// ⭐ DEFAULT PREVIEW IMAGE
+// DEFAULT PREVIEW IMAGE
 import defaultPreview from "../assets/businessPreview/default.jpg";
 
-const HERO_IMAGES = [homeBg, doctorHero, diagnosticsHero, techHero];
+/* ---------------------------------
+   HERO SLIDES (IMAGE + TEXT)
+---------------------------------- */
+const HERO_SLIDES = [
+  {
+    image: homeBg,
+    title: "Diagnostics",
+    desc: "Advanced laboratory diagnostics with global partner labs",
+  },
+  {
+    image: doctorHero,
+    title: "Pharmaceuticals",
+    desc: "High-quality medicines and healthcare solutions",
+  },
+  {
+    image: diagnosticsHero,
+    title: "Medical Tourism",
+    desc: "Access world-class treatment in Singapore & India",
+  },
+  {
+    image: techHero,
+    title: "Clinic",
+    desc: "Patient-focused clinical care with modern technology",
+  },
+];
 
 const Home = () => {
   const [heroIndex, setHeroIndex] = useState(0);
 
+  /* ---------------- HERO SLIDER (OPTION A) ---------------- */
   useEffect(() => {
-    document.body.classList.remove("home-page");
-
-
     const interval = setInterval(() => {
-      setHeroIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 4000);
+      setHeroIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 4500); // smooth timing
 
-    return () => {
-      document.body.classList.remove("home-page");
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, []);
 
+  const currentSlide = HERO_SLIDES[heroIndex];
+
+  /* ---------------- BUSINESS PREVIEW ---------------- */
   const defaultHoverData = {
     preview: defaultPreview,
   };
@@ -47,20 +69,24 @@ const Home = () => {
   return (
     <div className="home">
 
-      {/* ⭐ FULLSCREEN HERO SECTION */}
+      {/* ================= HERO SECTION ================= */}
       <section className="hero-section">
-        {HERO_IMAGES.map((img, index) => (
+
+        {/* HERO IMAGES */}
+        {HERO_SLIDES.map((slide, index) => (
           <img
             key={index}
-            src={img}
-            alt="Hero Slide"
+            src={slide.image}
+            alt={slide.title}
             className={`home-bg ${index === heroIndex ? "active" : ""}`}
           />
         ))}
 
-        {/* ⭐ RIGHT-BOTTOM HERO TEXT */}
+        {/* RIGHT-BOTTOM CONTENT */}
         <div className="hero-overlay hero-overlay-right">
           <div className="hero-content hero-content-right">
+
+            {/* MAIN BRAND MESSAGE — DO NOT REMOVE */}
             <h1 className="hero-title fade-in delay-1">
               Welcome to A Mart Holdings
             </h1>
@@ -69,11 +95,22 @@ const Home = () => {
               One of Sri Lanka’s fastest-growing conglomerates, built on
               innovation, leadership, and trust.
             </p>
+
+            {/* SLIDE LABEL */}
+            <div key={heroIndex} className="hero-slide-info fade-in delay-3">
+              <h3 className="hero-slide-title">
+                {currentSlide.title}
+              </h3>
+              <p className="hero-slide-desc">
+                {currentSlide.desc}
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* ⭐ MINI POSTS SECTION */}
+      {/* ================= MINI POSTS ================= */}
       <section className="home-post-section">
         <div className="home-post-card">
           <img src={leftPost} alt="Diagnostics" className="post-img" />
@@ -98,14 +135,17 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ⭐ BUSINESS SECTION */}
+      {/* ================= BUSINESS SECTION ================= */}
       <section className="business-section-wrapper">
         <div className="business-left-content">
           <img
-            src={hoverData?.preview || defaultPreview}
-            alt="Preview"
-            className="business-preview-image"
-          />
+  src={hoverData?.preview || defaultPreview}
+  alt="Preview"
+  className="business-preview-image"
+/>
+
+            
+          
         </div>
 
         <BusinessButtons
@@ -114,7 +154,7 @@ const Home = () => {
         />
       </section>
 
-      {/* ⭐ WHY CHOOSE US */}
+      {/* ================= WHY CHOOSE US ================= */}
       <section className="choose-section">
         <div className="choose-left">
           <h2>Why Patients Choose Us</h2>
@@ -139,7 +179,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ⭐ QUALITY DATA */}
+      {/* ================= QUALITY DATA ================= */}
       <section className="quality-section">
         <h2 className="quality-title">Quality Data</h2>
 

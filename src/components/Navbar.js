@@ -9,25 +9,24 @@ const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [searchValue, setSearchValue] = useState("");
 
+  /* ✅ UPDATED BUSINESS DROPDOWN (WITH MANUFACTURE) */
   const businessItems = [
-    { label: "Diagnostics", path: "/business/diagnostics" },
     { label: "Pharmaceuticals", path: "/business/pharma" },
+    { label: "Diagnostics", path: "/business/diagnostics" },
     { label: "Medical Tourism", path: "/business/medical-tourism" },
-    { label: "Clinic", path: "/business/clinic" },
-    { label: "Expia", path: "/business/expia" },
     { label: "Helaya Pharmacy", path: "/business/helaya-pharmacy" },
+    { label: "Medical Centers", path: "/business/medical-centers" },
+    { label: "Branding & Design", path: "/business/amart-design" },
     { label: "Helaya International", path: "/business/helaya-international" },
-    { label: "A Mart Design", path: "/business/amart-design" },
+    { label: "Manufacture", path: "/business/manufacture" }, // ✅ NEW
+    { label: "Expia", path: "/business/expia" },
   ];
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-
     if (!searchValue.trim()) return;
 
-    // 🔧 Later you can route to a search page
     console.log("Searching for:", searchValue);
-
     setSearchValue("");
   };
 
@@ -38,7 +37,7 @@ const Navbar = () => {
         {/* LOGO */}
         <div className="navbar-logo">
           <img src={logo} className="nav-logo-img" alt="A Mart Holdings Logo" />
-          <p className="nav-logo-text">A Mart Holdings</p>
+          <span className="nav-logo-text">A Mart Holdings</span>
         </div>
 
         {/* SEARCH BAR (DESKTOP ONLY) */}
@@ -52,38 +51,25 @@ const Navbar = () => {
           />
         </form>
 
-        {/* MOBILE HAMBURGER */}
+        {/* HAMBURGER */}
         <div
           className={`hamburger ${mobileMenu ? "open" : ""}`}
           onClick={() => setMobileMenu(!mobileMenu)}
           aria-label="Toggle menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span />
+          <span />
+          <span />
         </div>
 
         {/* NAV LINKS */}
-        <div className={mobileMenu ? "nav-links mobile-open" : "nav-links"}>
+        <div className={`nav-links ${mobileMenu ? "mobile-open" : ""}`}>
 
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) =>
-              isActive ? "nav-link active-line" : "nav-link"
-            }
-            onClick={() => setMobileMenu(false)}
-          >
+          <NavLink to="/" end className="nav-link" onClick={() => setMobileMenu(false)}>
             Home
           </NavLink>
 
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "nav-link active-line" : "nav-link"
-            }
-            onClick={() => setMobileMenu(false)}
-          >
+          <NavLink to="/about" className="nav-link" onClick={() => setMobileMenu(false)}>
             About Us
           </NavLink>
 
@@ -92,11 +78,11 @@ const Navbar = () => {
             <button
               className="nav-link dropdown-btn"
               onClick={() => setIsOpen(!isOpen)}
-              aria-expanded={isOpen}
               type="button"
+              aria-expanded={isOpen}
             >
               Business
-              <span className={isOpen ? "arrow up" : "arrow"}>▼</span>
+              <span className={`arrow ${isOpen ? "up" : ""}`}>▼</span>
             </button>
 
             {isOpen && (
@@ -118,23 +104,11 @@ const Navbar = () => {
             )}
           </div>
 
-          <NavLink
-            to="/events"
-            className={({ isActive }) =>
-              isActive ? "nav-link active-line" : "nav-link"
-            }
-            onClick={() => setMobileMenu(false)}
-          >
+          <NavLink to="/events" className="nav-link" onClick={() => setMobileMenu(false)}>
             Events
           </NavLink>
 
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive ? "nav-link active-line" : "nav-link"
-            }
-            onClick={() => setMobileMenu(false)}
-          >
+          <NavLink to="/contact" className="nav-link" onClick={() => setMobileMenu(false)}>
             Contact Us
           </NavLink>
 
