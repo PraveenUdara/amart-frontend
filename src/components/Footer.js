@@ -8,10 +8,10 @@ const Footer = () => {
   return (
     <footer className="footer">
 
-      {/* TOP SECTION */}
+      {/* ================= TOP SECTION ================= */}
       <div className="footer-top">
 
-        {/* Column 1: Logo + Address */}
+        {/* Column 1: Logo + Address + Social */}
         <div className="footer-col">
           <img src={logo} alt="A Mart Holdings" className="footer-logo" />
 
@@ -22,6 +22,33 @@ const Footer = () => {
             Sunethradevi Road,<br />
             10250, Sri Lanka
           </p>
+
+          {/* FOLLOW US TEXT */}
+          <p className="footer-text" style={{ marginTop: "12px", fontWeight: 500 }}>
+            Follow us on social media
+          </p>
+
+          {/* SOCIAL ICONS */}
+          <div className="footer-social">
+            <a
+              href="https://www.facebook.com/amartholdings"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="A Mart Holdings Facebook"
+              className="social-icon facebook"
+            >
+              {/* Facebook SVG */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="currentColor"
+              >
+                <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.692V11.01h3.129V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.696h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         {/* Column 2: Contact */}
@@ -74,7 +101,7 @@ const Footer = () => {
       {/* Divider */}
       <div className="footer-divider"></div>
 
-      {/* Copyright */}
+      {/* Bottom */}
       <div className="footer-bottom">
         © {new Date().getFullYear()} A Mart Holdings. All rights reserved.
       </div>

@@ -1,0 +1,83 @@
+/* =================================================
+   BUSINESS COVER (HERO SECTION)
+================================================= */
+
+.business-cover {
+  width: 100%;
+  height: 65vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Overlay for readability */
+.business-cover-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 32, 64, 0.65),
+    rgba(0, 32, 64, 0.25)
+  );
+  display: flex;
+  align-items: center;
+}
+
+/* Text container */
+.business-cover-content {
+  padding: 0 8%;
+  max-width: 700px;
+  color: #ffffff;
+}
+
+.business-cover-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.business-cover-desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* =================================================
+   PAGE CONTENT
+================================================= */
+
+.business-content {
+  padding: 70px 8%;
+}
+
+.business-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0a2540;
+  margin-bottom: 20px;
+}
+
+.business-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 900px;
+  color: #333;
+}
+
+/* =================================================
+   RESPONSIVE
+================================================= */
+
+@media (max-width: 768px) {
+  .business-cover {
+    height: 50vh;
+  }
+
+  .business-cover-title {
+    font-size: 2.2rem;
+  }
+
+  .business-cover-desc {
+    font-size: 1rem;
+  }
+}

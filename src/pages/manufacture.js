@@ -1,6 +1,6 @@
 // src/pages/Manufacture.js
 import React from "react";
-import "../styles/Manufacture.css";
+import "../styles/manufacture.css";
 import manufactureImg from "../assets/manufacture.jpg";
 
 const Manufacture = () => {
