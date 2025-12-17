@@ -9,6 +9,8 @@ import ggImage from "../assets/9 pages/medicalt/GG.webp";
 import mountImage from "../assets/9 pages/medicalt/Mount-Elizabeth_novena.jpg";
 import mountElizabethImage from "../assets/9 pages/medicalt/mounitel.jpg";
 import parkwayImage from "../assets/9 pages/medicalt/pak-east.jpg";
+import gleneaglesImage from "../assets/9 pages/medicalt/gleneagles.jpg";
+import pccImage from "../assets/9 pages/medicalt/pcc.jpg";
 
 const MedicalTourism = () => {
   const [activeCountry, setActiveCountry] = useState("india");
@@ -192,6 +194,44 @@ const MedicalTourism = () => {
                 </div>
                 <div className="tourism-image">
                   <img src={parkwayImage} alt="Parkway East Hospital Singapore" />
+                </div>
+              </div>
+
+              <div className="tourism-split split-margin">
+                <div className="tourism-image">
+                  <img src={gleneaglesImage} alt="Gleneagles Hospital Singapore" />
+                </div>
+                <div className="tourism-copy">
+                  <h3>Gleneagles Hospital, Singapore</h3>
+                  <p>
+                    Gleneagles Hospital provides a wide range of specialist, diagnostic, and imaging services.
+                    Gleneagles has an extensive range of medical and surgical specialties including oncology,
+                    cardiology, liver transplant, gastroenterology, orthopaedic surgery and sports medicine,
+                    and obstetrics and gynaecology.
+                  </p>
+                  <p>
+                    Since 2006, Gleneagles Hospital has been accredited by the Joint Commission International
+                    (JCI), an internationally recognised standard for patient and staff safety, reflecting the
+                    organisation's commitment toward quality healthcare.
+                  </p>
+                </div>
+              </div>
+
+              <div className="tourism-split tourism-split-reverse split-margin">
+                <div className="tourism-copy">
+                  <h3>Parkway Cancer Centre, Singapore</h3>
+                  <p>
+                    PCC offers comprehensive cancer treatments delivered by a highly skilled, multidisciplinary
+                    team of medical doctors, nurses, counsellors, and other paramedical professionals.
+                  </p>
+                  <p>
+                    Every day PCC delivers holistic cancer care in a safe and soothing environment. They are aided
+                    by the latest technologies and proven innovative therapies to achieve optimal clinical outcomes
+                    for patients, ensuring each visit remains as comfortable as possible.
+                  </p>
+                </div>
+                <div className="tourism-image">
+                  <img src={pccImage} alt="Parkway Cancer Centre Singapore" />
                 </div>
               </div>
             </>
