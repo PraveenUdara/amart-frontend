@@ -6,7 +6,7 @@ import "../styles/AboutUs.css";
 import missionImg from "../assets/mission.jpg";
 import visionImg from "../assets/vision.jpg";
 import valuesImg from "../assets/values.jpg";
-import chairmanImg from "../assets/chairman.jpg"; // <-- Add Chairman Image
+import chairmanImg from "../assets/chairman.jpg";
 
 const AboutUs = () => {
   const sections = {
@@ -15,7 +15,7 @@ const AboutUs = () => {
       label: "Our Mission",
       title: "Our Mission",
       image: missionImg,
-      text: `Improve patient lives by delivering innovative genetic diagnosis solutions 
+      text: `Improve patient lives by delivering innovative genetic diagnosis solutions
 and provide high quality pharmaceuticals to government and private market.`,
     },
     vision: {
@@ -23,8 +23,8 @@ and provide high quality pharmaceuticals to government and private market.`,
       label: "Our Vision",
       title: "Our Vision",
       image: visionImg,
-      text: `To become Sri Lanka’s most trusted healthcare bridge to the world —
-enabling early, accurate, and affordable medical solutions through global-standard 
+      text: `To become Sri Lanka's most trusted healthcare bridge to the world,
+enabling early, accurate, and affordable medical solutions through global-standard
 innovation and technology.`,
     },
     values: {
@@ -48,64 +48,73 @@ innovation and technology.`,
   return (
     <div className="about-page">
 
-      {/* ⭐ HERO SECTION (TEXT BOTTOM RIGHT) */}
+      {/* HERO */}
       <div className="about-hero">
         <img src={aboutUsImg} alt="About Us" className="about-hero-bg" />
 
         <div className="about-hero-overlay">
-          <h1 className="about-hero-title">About A Mart Holdings</h1>
-          <p className="about-hero-subtitle">
-            Connecting Sri Lanka to world-class healthcare, diagnostics & technology.
-          </p>
+          <div className="about-hero-inner">
+            <h1 className="about-hero-title fade-in-up">About A Mart Holdings</h1>
+            <p className="about-hero-subtitle fade-in-up delay-1">
+              Connecting Sri Lanka to world-class healthcare, diagnostics and technology.
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* ⭐ MAIN ABOUT PARAGRAPH (WIDE VERSION) */}
-      <section className="about-card">
+      {/* HIGHLIGHT CARDS */}
+      <div className="about-highlight">
+        <div className="highlight-card fade-up">
+          <span className="highlight-label">Founded</span>
+          <span className="highlight-value">2018</span>
+          <span className="highlight-note">Built on ambition, resilience, and innovation.</span>
+        </div>
+        <div className="highlight-card fade-up delay-1">
+          <span className="highlight-label">Business Verticals</span>
+          <span className="highlight-value">7+</span>
+          <span className="highlight-note">Pharma, diagnostics, medical tourism, design and more.</span>
+        </div>
+        <div className="highlight-card fade-up delay-2">
+          <span className="highlight-label">Global Network</span>
+          <span className="highlight-value">Worldwide</span>
+          <span className="highlight-note">Trusted partnerships and international certifications.</span>
+        </div>
+      </div>
+
+      {/* MAIN ABOUT */}
+      <section className="about-card fade-up">
         <p>
-          A Mart is one of Sri Lanka’s fastest growing companies, built on a foundation
+          A Mart is one of Sri Lanka's fastest growing companies, built on a foundation
           of ambition, resilience, and innovation. From humble beginnings in 2018, the
-          company has rapidly evolved and successfully diversified into several key
-          sectors including Pharmaceuticals, Diagnostics, Medical Tourism, Branding &
-          Design, Helaya Pharmacy, Helaya International (based in Dubai, UAE), and
-          Power & Energy. Today, A Mart is also a trusted healthcare delivery partner to
-          the Government of Sri Lanka, strengthening national capability.
+          company rapidly diversified into Pharmaceuticals, Diagnostics, Medical Tourism,
+          Branding & Design, Helaya Pharmacy, Helaya International (Dubai), and Power & Energy.
         </p>
 
         <p>
-          Our strategic objective is reinforcing our core operational strengths, while
-          boldly exploring new opportunities in emerging markets. Guided by an energetic
-          and forward-thinking leadership team, A Mart has consistently entered and
-          excelled in challenging business environments, becoming one of the most
-          distinguished and respected business entities in the country.
+          Our strategic objective is reinforcing core strengths while exploring emerging markets.
+          Guided by an energetic leadership team, A Mart consistently enters and excels in
+          challenging environments, becoming one of the most respected business entities in the country.
         </p>
 
         <p>
-          At the heart of our success is our greatest asset — our people. Our loyal,
-          committed, and highly skilled professionals fuel our growth with passion and
-          expertise. Their dedication empowers us to stay ahead of the curve, embrace
-          innovation, and expand into promising new industries with confidence and
-          purpose.
+          At the heart of our success is our greatest asset — our people. Loyal, committed, and
+          highly skilled professionals fuel our growth with passion and expertise. Their dedication
+          empowers us to stay ahead, embrace innovation, and expand into new industries with confidence.
         </p>
 
         <p>
-          We operate with a purpose-driven mindset, leveraging cutting-edge technology
-          and an adaptive approach that blends visionary thinking with strong technical
-          execution. This unique balance enables us to redefine industry standards and
-          create meaningful impact across all the sectors we serve.
+          We operate with a purpose-driven mindset, leveraging technology and adaptive thinking to
+          redefine standards and create impact across every sector we serve.
         </p>
 
         <p>
-          As we continue to grow, our unwavering commitment to quality, innovation, and
-          customer satisfaction remains central to everything we do. At A Mart, we do
-          more than envision the future — we shape it. Together with our partners,
-          employees, and community, we are building a stronger, healthier, and more
-          prosperous Sri Lanka.
+          Our commitment to quality, innovation, and customer satisfaction remains central to everything we do.
+          At A Mart, we shape the future alongside our partners, employees, and community.
         </p>
       </section>
 
-      {/* ⭐ TABS: MISSION / VISION / VALUES */}
-      <section className="mv-modern">
+      {/* MISSION / VISION / VALUES */}
+      <section className="mv-modern fade-up">
         <div className="mv-tabs-modern">
           {Object.values(sections).map((sec) => (
             <button
@@ -120,7 +129,6 @@ innovation and technology.`,
             </button>
           ))}
 
-          {/* Moving Underline */}
           <div
             className="mv-tab-underline"
             style={{
@@ -134,9 +142,8 @@ innovation and technology.`,
           ></div>
         </div>
 
-        {/* CONTENT WITH IMAGE + TEXT */}
-        <div className="mv-cards-container fade-slide">
-          <div className="mv-card-image">
+        <div className="mv-cards-container">
+          <div className="mv-card-image fade-up">
             <img
               src={activeSection.image}
               alt={activeSection.title}
@@ -144,7 +151,7 @@ innovation and technology.`,
             />
           </div>
 
-          <div className="mv-card-text">
+          <div className="mv-card-text fade-up delay-1">
             <h3 className="mv-title-modern">{activeSection.title}</h3>
 
             {activeSection.key !== "values" ? (
@@ -160,19 +167,18 @@ innovation and technology.`,
         </div>
       </section>
 
-      {/* ⭐ CHAIRMAN MESSAGE SECTION */}
-      <section className="chairman-section">
+      {/* CHAIRMAN MESSAGE */}
+      <section className="chairman-section fade-up">
         <div className="chairman-content">
-          <h2 className="chairman-title">Chairman’s Message</h2>
+          <h2 className="chairman-title">Chairman's Message</h2>
           <p className="chairman-text">
-            At A Mart Holdings, our journey has always been guided by a bold vision:
-            to elevate Sri Lanka’s healthcare landscape through innovation, global
-            partnerships, and unwavering commitment to excellence. Together, we are
-            shaping a healthier and more prosperous future for our nation.
+            Our journey is guided by a bold vision: to elevate Sri Lanka's healthcare landscape
+            through innovation, global partnerships, and unwavering commitment to excellence.
+            Together, we are shaping a healthier and more prosperous future for our nation.
           </p>
         </div>
 
-        <div className="chairman-image-wrapper">
+        <div className="chairman-image-wrapper fade-up delay-1">
           <img
             src={chairmanImg}
             alt="Chairman - A Mart Holdings"

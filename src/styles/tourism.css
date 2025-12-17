@@ -1,0 +1,166 @@
+/* ======================
+   MEDICAL TOURISM PAGE
+====================== */
+
+.tourism-page {
+  width: 100%;
+  background: #f5f7fa;
+  font-family: "Poppins", sans-serif;
+}
+
+.tourism-cover {
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+}
+
+.tourism-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(5, 35, 70, 0.6),
+    rgba(5, 35, 70, 0.2)
+  );
+  display: flex;
+  align-items: center;
+}
+
+.tourism-cover-content {
+  padding: 0 8%;
+  max-width: 700px;
+  color: #ffffff;
+}
+
+.tourism-cover-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.tourism-cover-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.tourism-content {
+  padding: 70px 8% 90px;
+}
+
+.tourism-content h2 {
+  font-size: 2rem;
+  color: #0d2744;
+  margin-bottom: 12px;
+}
+
+.tourism-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #44505d;
+  max-width: 900px;
+}
+
+.tourism-tabs {
+  display: inline-flex;
+  gap: 12px;
+  margin: 24px 0 12px;
+  background: #e9f1fb;
+  padding: 6px;
+  border-radius: 14px;
+}
+
+.tourism-tab {
+  border: none;
+  background: transparent;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  color: #0d2744;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.tourism-tab.active {
+  background: linear-gradient(135deg, #0d4f86, #0a3c67);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(13, 79, 134, 0.26);
+}
+
+.tourism-tab-panel {
+  margin-top: 6px;
+  padding: 20px 0 0;
+  max-width: 900px;
+}
+
+.tourism-tab-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #3f4c5a;
+}
+
+.tourism-split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.split-margin {
+  margin-top: 28px;
+}
+
+.tourism-split-reverse {
+  grid-template-columns: 1fr 1.1fr;
+}
+
+.tourism-copy h3 {
+  font-size: 1.5rem;
+  color: #0d2744;
+  margin-bottom: 10px;
+}
+
+.tourism-copy p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #3f4c5a;
+  margin-bottom: 12px;
+}
+
+.tourism-image img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 900px) {
+  .tourism-split {
+    grid-template-columns: 1fr;
+  }
+
+  .tourism-split-reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .tourism-tabs {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .tourism-cover {
+    height: 45vh;
+  }
+
+  .tourism-cover-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .tourism-cover-content p {
+    font-size: 0.98rem;
+  }
+}

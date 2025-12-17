@@ -6,6 +6,9 @@
   background: #f6f9fc;
   width: 100%;
   font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
 }
 
 /* ------------------------------------- */
@@ -15,9 +18,9 @@
 .about-hero {
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 50vh;
   overflow: hidden;
-  border-radius: 0 0 18px 18px;
+  border-radius: 0;
 }
 
 .about-hero-bg {
@@ -32,15 +35,24 @@
   transform: scale(1.05);
 }
 
-/* Text bottom-right */
 .about-hero-overlay {
   position: absolute;
-  bottom: 30px;
-  right: 50px;
-  text-align: right;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  text-align: left;
   color: #ffffff;
   text-shadow: 0 4px 14px rgba(0, 0, 0, 0.65);
-  animation: fadeIn 1s ease forwards;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 47, 95, 0.65),
+    rgba(0, 47, 95, 0.15)
+  );
+}
+
+.about-hero-inner {
+  max-width: 650px;
 }
 
 .about-hero-title {
@@ -54,10 +66,47 @@
   opacity: 0.9;
 }
 
-/* Title Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ------------------------------------- */
+/*           HIGHLIGHT CARDS             */
+/* ------------------------------------- */
+.about-highlight {
+  max-width: 1200px;
+  width: 100%;
+  margin: -46px auto 0;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.highlight-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(226, 234, 244, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.highlight-label {
+  font-size: 0.9rem;
+  color: #3f5870;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.highlight-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0d2744;
+}
+
+.highlight-note {
+  font-size: 0.95rem;
+  color: #5a6a7c;
+  line-height: 1.5;
 }
 
 /* ------------------------------------- */
@@ -72,23 +121,14 @@
   border-radius: 16px;
   box-shadow: 0 10px 34px rgba(0, 0, 0, 0.08);
   line-height: 1.65;
-  font-size: 0.95rem;      /* ⭐ smaller text everywhere */
+  font-size: 0.95rem;
   color: #455a64;
-
-  animation: fadeSlide 0.7s ease;
 }
 
-/* Better spacing */
 .about-card p {
   margin-bottom: 16px;
-  font-size: 0.95rem;      /* ⭐ paragraph text smaller */
-  line-height: 1.6;        /* tighter spacing */
-}
-
-/* Fade Slide Animation */
-@keyframes fadeSlide {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* ------------------------------------- */
@@ -98,7 +138,7 @@
 .chairman-section {
   width: 100%;
   padding: 70px 10%;
-  margin-top: 50px;
+  margin-top: 20px;
 
   background: linear-gradient(
     145deg,
@@ -124,13 +164,11 @@
   font-weight: 700;
   color: #003f5c;
   margin-bottom: 16px;
-  text-align: right;
 }
 
 .chairman-text {
-  font-size: 1.05rem;     /* ⭐ slightly smaller */
+  font-size: 1.05rem;
   line-height: 1.75;
-  text-align: right;
   color: #455a64;
 }
 
@@ -159,7 +197,7 @@
 /* ------------------------------------- */
 
 .mv-modern {
-  margin-top: 60px;
+  margin-top: 10px;
   padding: 70px 8%;
   background: #ffffff;
   border-radius: 18px;
@@ -177,7 +215,7 @@
 .mv-tab-modern-btn {
   background: transparent;
   border: none;
-  font-size: 1.05rem; /* ⭐ smaller tabs */
+  font-size: 1.05rem;
   padding: 10px 0;
   color: #708090;
   cursor: pointer;
@@ -226,7 +264,7 @@
 }
 
 .mv-title-modern {
-  font-size: 2rem; /* ⭐ smaller */
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 18px;
   color: #003f5c;
@@ -234,7 +272,7 @@
 
 .mv-modern-text,
 .mv-modern-list li {
-  font-size: 1rem;  /* ⭐ smaller body text */
+  font-size: 1rem;
   color: #455a64;
   line-height: 1.7;
 }
@@ -259,14 +297,14 @@
 /* ------------------------------------- */
 
 @media (max-width: 900px) {
+  .about-highlight {
+    grid-template-columns: 1fr 1fr;
+    margin-top: -26px;
+  }
+
   .chairman-section {
     flex-direction: column-reverse;
     padding: 50px 6%;
-    text-align: center;
-  }
-
-  .chairman-title,
-  .chairman-text {
     text-align: center;
   }
 
@@ -288,12 +326,37 @@
     font-size: 2.2rem;
   }
 
-  .about-hero-overlay {
-    right: 20px;
-    bottom: 20px;
+  .about-highlight {
+    grid-template-columns: 1fr;
   }
 
   .mv-tabs-modern {
     gap: 20px;
   }
+}
+
+/* Animations */
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.fade-up.delay-1 { animation-delay: 0.15s; }
+.fade-up.delay-2 { animation-delay: 0.3s; }
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+.fade-in-up.delay-1 { animation-delay: 0.2s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }

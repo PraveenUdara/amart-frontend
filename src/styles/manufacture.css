@@ -10,7 +10,7 @@
 .manufacture-hero {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 50vh;
   overflow: hidden;
 }
 
@@ -101,10 +101,6 @@
 }
 
 @media (max-width: 600px) {
-  .manufacture-hero {
-    height: 50vh;
-  }
-
   .manufacture-hero-overlay {
     right: 5%;
     left: 5%;
