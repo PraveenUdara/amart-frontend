@@ -97,7 +97,7 @@ const Home = () => {
             </p>
 
             {/* SLIDE LABEL */}
-            <div key={heroIndex} className="hero-slide-info fade-in delay-3">
+            <div key={heroIndex} className="hero-slide-info">
               <h3 className="hero-slide-title">
                 {currentSlide.title}
               </h3>

@@ -66,6 +66,91 @@
 }
 
 /* =================================================
+   MEDGENOME FEATURE SECTION
+================================================= */
+.medgenome-section {
+  padding: 60px 8%;
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.medgenome-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+  display: block;
+}
+
+.medgenome-copy h3 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0a2540;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.medgenome-copy p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #2f3a4a;
+  margin: 0 0 14px;
+}
+
+.medgenome-cta {
+  font-weight: 700;
+  color: #0a4b86;
+}
+
+/* =================================================
+   CENTOGENE FEATURE SECTION
+================================================= */
+.centogene-section {
+  padding: 60px 8%;
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.centogene-image {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.centogene-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+  display: block;
+}
+
+.centogene-copy h3 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0a2540;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.centogene-copy p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #2f3a4a;
+  margin: 0 0 14px;
+}
+
+.centogene-cta {
+  font-weight: 700;
+  color: #0a4b86;
+}
+
+/* =================================================
    RESPONSIVE
 ================================================= */
 
@@ -76,5 +161,27 @@
 
   .business-cover-desc {
     font-size: 1rem;
+  }
+
+  .medgenome-section {
+    grid-template-columns: 1fr;
+    padding: 50px 6%;
+  }
+
+  .medgenome-image img {
+    max-width: 100%;
+  }
+
+  .centogene-section {
+    grid-template-columns: 1fr;
+    padding: 50px 6%;
+  }
+
+  .centogene-image {
+    justify-content: flex-start;
+  }
+
+  .centogene-image img {
+    max-width: 100%;
   }
 }
