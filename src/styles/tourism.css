@@ -58,29 +58,38 @@
 
 .tourism-content {
   padding: 70px 8% 90px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.tourism-content h2 {
-  font-size: 2rem;
+.tourism-intro {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto 18px;
+}
+
+.tourism-intro h2 {
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.2rem);
   color: #0d2744;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.tourism-content p {
+.tourism-intro p {
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.7;
   color: #44505d;
-  max-width: 900px;
 }
 
 .tourism-tabs {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   gap: 12px;
-  margin: 24px 0 12px;
+  margin: 26px auto 16px;
   background: #e9f1fb;
   padding: 6px;
   border-radius: 14px;
   box-shadow: 0 8px 20px rgba(13, 79, 134, 0.12);
+  flex-wrap: wrap;
 }
 
 .tourism-tab {
@@ -106,9 +115,11 @@
 
 .tourism-tab-panel {
   margin-top: 6px;
-  padding: 20px 0 0;
-  max-width: 900px;
+  padding: 18px 0 0;
+  max-width: 1100px;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tourism-tab-text {
@@ -126,9 +137,7 @@
   padding: 22px;
   border-radius: 16px;
   box-shadow: 0 14px 38px rgba(9, 45, 92, 0.12);
-  opacity: 0;
-  transform: translateY(24px);
-  animation: tourismFadeUp 0.9s ease forwards;
+  opacity: 1;
 }
 
 .split-margin {
@@ -150,6 +159,14 @@
   line-height: 1.8;
   color: #3f4c5a;
   margin-bottom: 12px;
+}
+
+.tourism-split-reverse .tourism-image {
+  order: 2;
+}
+
+.tourism-split-reverse .tourism-copy {
+  order: 1;
 }
 
 .tourism-image img {
@@ -185,6 +202,15 @@
   animation-delay: 0.33s;
 }
 
+.tourism-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.tourism-reveal.show {
+  animation: tourismFadeUp 0.6s ease forwards;
+}
+
 @keyframes tourismFadeUp {
   from {
     opacity: 0;
@@ -206,8 +232,12 @@
     grid-template-columns: 1fr;
   }
 
-  .tourism-tabs {
-    display: flex;
+  .tourism-split-reverse .tourism-image {
+    order: 1;
+  }
+
+  .tourism-split-reverse .tourism-copy {
+    order: 2;
   }
 }
 
@@ -226,5 +256,13 @@
 
   .tourism-cover-content p {
     font-size: 0.98rem;
+  }
+
+  .tourism-content {
+    padding: 60px 6% 80px;
+  }
+
+  .tourism-tabs {
+    margin: 24px auto 14px;
   }
 }

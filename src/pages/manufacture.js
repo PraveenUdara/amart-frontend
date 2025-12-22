@@ -1,7 +1,7 @@
 // src/pages/Manufacture.js
 import React from "react";
 import "../styles/manufacture.css";
-import manufactureImg from "../assets/manufacture.jpg";
+import manufactureImg from "../assets/9 pages/manufacture/manufatcure.png";
 
 const Manufacture = () => {
   return (

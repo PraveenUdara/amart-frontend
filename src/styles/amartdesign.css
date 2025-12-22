@@ -1,0 +1,223 @@
+/* ================= BRANDING & DESIGN PAGE ================= */
+
+.design-page {
+  background: #f6f8fb;
+  color: #0a1f33;
+  font-family: "Poppins", sans-serif;
+}
+
+.design-hero {
+  position: relative;
+  height: 55vh;
+  min-height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.design-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+.design-hero-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: linear-gradient(120deg, rgba(5, 18, 36, 0.78), rgba(5, 18, 36, 0.32));
+  display: flex;
+  align-items: flex-end;
+  padding: 0 8% 54px;
+}
+
+.design-hero-text h1 {
+  font-size: 3rem;
+  margin: 0 0 12px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.design-hero-text p {
+  color: #e6edf5;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.design-overview {
+  padding: 60px 8%;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.design-overview-text h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.design-overview-text p {
+  margin: 0 0 18px;
+  line-height: 1.7;
+  color: #2b3b4d;
+}
+
+.design-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background: #0a4b86;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 8px 16px rgba(10, 75, 134, 0.16);
+}
+
+.design-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.pillar-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(10, 75, 134, 0.08);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+}
+
+.pillar-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.pillar-card p {
+  margin: 0;
+  line-height: 1.6;
+  color: #2f3a4a;
+}
+
+.design-services {
+  padding: 24px 8% 64px;
+}
+
+.design-services h2 {
+  margin: 0 0 16px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.service-card {
+  background: #ffffff;
+  border: 1px solid rgba(10, 75, 134, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.07);
+}
+
+.service-card h4 {
+  margin: 0 0 8px;
+  color: #0a2f56;
+}
+
+.service-card p {
+  margin: 0;
+  color: #2f3a4a;
+  line-height: 1.6;
+}
+
+.design-cta {
+  padding: 0 8% 70px;
+}
+
+.cta-card {
+  background: linear-gradient(135deg, #0a4b86, #0a2f56);
+  color: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 16px 32px rgba(10, 75, 134, 0.25);
+}
+
+.cta-button {
+  background: #ffffff;
+  color: #0a2f56;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.16);
+}
+
+.design-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.design-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .design-hero-overlay {
+    padding: 0 6% 42px;
+  }
+
+  .design-hero-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .design-overview {
+    grid-template-columns: 1fr;
+    padding: 50px 6%;
+  }
+
+  .design-services {
+    padding: 10px 6% 54px;
+  }
+
+  .design-cta {
+    padding: 0 6% 64px;
+  }
+}
+
+@media (max-width: 620px) {
+  .design-hero {
+    min-height: 360px;
+  }
+
+  .cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}

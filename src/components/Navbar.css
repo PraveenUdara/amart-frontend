@@ -273,10 +273,6 @@
   box-shadow: none;
 }
 
-.nav-business-btn::after {
-  display: none;
-}
-
 .arrow {
   display: inline-block;
   width: 10px;

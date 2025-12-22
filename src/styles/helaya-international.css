@@ -1,0 +1,142 @@
+/* ================= HELAYA INTERNATIONAL PAGE ================= */
+
+.intl-page {
+  background: #f6f8fb;
+  color: #0a1f33;
+  font-family: "Poppins", sans-serif;
+}
+
+.intl-hero {
+  position: relative;
+  height: 52vh;
+  min-height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.intl-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+.intl-hero-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: linear-gradient(115deg, rgba(6, 25, 48, 0.78), rgba(6, 25, 48, 0.3));
+  display: flex;
+  align-items: flex-end;
+  padding: 0 8% 50px;
+}
+
+.intl-hero-text h1 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 2.8rem;
+  letter-spacing: 0.4px;
+}
+
+.intl-hero-text p {
+  margin: 0;
+  color: #e6edf5;
+  font-size: 1.02rem;
+}
+
+.intl-body {
+  padding: 56px 8% 70px;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intl-text h2 {
+  margin: 0 0 12px;
+  font-size: 26px;
+}
+
+.intl-text p {
+  margin: 0 0 18px;
+  line-height: 1.7;
+  color: #2f3a4a;
+}
+
+.intl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.intl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.intl-card {
+  background: #ffffff;
+  border: 1px solid rgba(10, 75, 134, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+}
+
+.intl-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #0a2f56;
+}
+
+.intl-card p {
+  margin: 0;
+  line-height: 1.6;
+  color: #2f3a4a;
+}
+
+.tag {
+  background: #0a4b86;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 8px 16px rgba(10, 75, 134, 0.16);
+}
+
+.intl-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.intl-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .intl-hero-overlay {
+    padding: 0 6% 42px;
+  }
+
+  .intl-hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .intl-body {
+    grid-template-columns: 1fr;
+    padding: 46px 6% 60px;
+  }
+}
+
+@media (max-width: 620px) {
+  .intl-hero {
+    min-height: 340px;
+  }
+}
