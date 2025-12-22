@@ -19,6 +19,11 @@
   padding: 0 40px;
 }
 
+/* Ensure buttons inherit the same font as navbar/body */
+.business-buttons-container {
+  font-family: "Poppins", sans-serif;
+}
+
 /* ---------------- BUSINESS CARD ---------------- */
 .business-card {
   background: #eef6ff; /* Light hospital blue */

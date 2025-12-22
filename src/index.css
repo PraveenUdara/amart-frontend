@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* RESET */
 * {
   box-sizing: border-box;
@@ -29,48 +33,66 @@ body {
   width: 100%;
 }
 
-/* ---------------------- CONTACT FORM ---------------------- */
-/*.form {
-  margin-top: 25px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+@layer utilities {
+  .animate-hero-zoom {
+    animation: heroZoom 6s ease-in-out forwards;
+  }
+
+  .animate-hero-slide {
+    animation: heroSlideReveal 0.9s ease forwards;
+  }
+
+  .animate-hero-slide-text {
+    animation: heroSlideUp 0.9s ease forwards;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.9s ease forwards;
+  }
 }
 
-.form-row {
-  margin-bottom: 15px;
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
 }
 
-.form-input,
-.form-textarea {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #cfd8dc;
-  font-size: 1rem;
+@keyframes heroSlideReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
 }
 
-.form-textarea {
-  min-height: 120px;
+@keyframes heroSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
-.btn-primary {
-  padding: 12px 20px;
-  background: #0d6efd;
-  color: white;
-  border: none;
-  border-radius: 999px;
-  font-size: 1rem;
-  cursor: pointer;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-
-
-/* ---------------------- RESPONSIVE (GLOBAL ONLY) ---------------------- */
-/*@media (max-width: 600px) {
-  /* No home page code here */

@@ -10,12 +10,6 @@ const Manufacture = () => {
       {/* HERO */}
       <section className="manufacture-hero">
         <img src={manufactureImg} alt="Manufacturing" />
-        <div className="manufacture-hero-overlay">
-          <h1>Manufacturing</h1>
-          <p>
-            Quality-driven pharmaceutical and healthcare manufacturing solutions
-          </p>
-        </div>
       </section>
 
       {/* INTRO */}

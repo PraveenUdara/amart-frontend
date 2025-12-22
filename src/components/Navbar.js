@@ -23,6 +23,22 @@ const Navbar = () => {
   const [shrink, setShrink] = useState(false);
 
   const navRef = useRef(null);
+  const closeTimer = useRef(null);
+
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => {
+      setBizOpen(false);
+      closeTimer.current = null;
+    }, 120);
+  };
 
   // Sticky shrink on scroll
   useEffect(() => {
@@ -77,12 +93,18 @@ const Navbar = () => {
           {/* ===== BUSINESS MEGA MENU (FIXED) ===== */}
           <div
             className="nav-mega"
-            onMouseEnter={() => window.innerWidth > 900 && setBizOpen(true)}
-            onMouseLeave={() => window.innerWidth > 900 && setBizOpen(false)}
+            onMouseEnter={() => {
+              cancelClose();
+              setBizOpen(true);
+            }}
+            onMouseLeave={scheduleClose}
           >
             <button
               className="nav-link nav-business-btn"
-              onClick={() => setBizOpen((v) => !v)}
+              onClick={() => {
+                cancelClose();
+                setBizOpen((v) => !v);
+              }}
               type="button"
               aria-expanded={bizOpen}
             >
@@ -96,8 +118,11 @@ const Navbar = () => {
             {/* Keep hover alive on panel */}
             <div
               className={`mega-panel ${bizOpen ? "show" : ""}`}
-              onMouseEnter={() => window.innerWidth > 900 && setBizOpen(true)}
-              onMouseLeave={() => window.innerWidth > 900 && setBizOpen(false)}
+              onMouseEnter={() => {
+                cancelClose();
+                setBizOpen(true);
+              }}
+              onMouseLeave={scheduleClose}
             >
               <div className="mega-inner">
                 <div className="mega-left">

@@ -1,6 +1,6 @@
 // src/pages/Home.js
 import React, { useState, useEffect } from "react";
-import "../index.css";
+import "../styles/Home.css";
 import BusinessButtons from "../components/BusinessButtons";
 
 // HERO IMAGES
@@ -78,6 +78,8 @@ const Home = () => {
             key={index}
             src={slide.image}
             alt={slide.title}
+            width="1920"
+            height="1080"
             className={`home-bg ${index === heroIndex ? "active" : ""}`}
           />
         ))}
@@ -86,13 +88,13 @@ const Home = () => {
         <div className="hero-overlay hero-overlay-right">
           <div className="hero-content hero-content-right">
 
-            {/* MAIN BRAND MESSAGE — DO NOT REMOVE */}
+            {/* MAIN BRAND MESSAGE ƒ?" DO NOT REMOVE */}
             <h1 className="hero-title fade-in delay-1">
               Welcome to A Mart Holdings
             </h1>
 
             <p className="hero-text hero-text-strong fade-in delay-2">
-              One of Sri Lanka’s fastest-growing conglomerates, built on
+              One of Sri Lankaƒ?Ts fastest-growing conglomerates, built on
               innovation, leadership, and trust.
             </p>
 
@@ -113,7 +115,7 @@ const Home = () => {
       {/* ================= MINI POSTS ================= */}
       <section className="home-post-section">
         <div className="home-post-card">
-          <img src={leftPost} alt="Diagnostics" className="post-img" />
+          <img src={leftPost} alt="Diagnostics" width="640" height="280" className="post-img" />
           <div className="post-overlay">
             <h2>Introducing</h2>
             <h1>Latest Diagnostic Services</h1>
@@ -124,7 +126,7 @@ const Home = () => {
         </div>
 
         <div className="home-post-card">
-          <img src={rightPost} alt="Technologies" className="post-img" />
+          <img src={rightPost} alt="Technologies" width="640" height="280" className="post-img" />
           <div className="post-overlay">
             <h2>Introducing</h2>
             <h1>Latest Technologies</h1>
@@ -141,6 +143,8 @@ const Home = () => {
           <img
   src={hoverData?.preview || defaultPreview}
   alt="Preview"
+  width="640"
+  height="420"
   className="business-preview-image"
 />
 
@@ -175,7 +179,7 @@ const Home = () => {
         </div>
 
         <div className="choose-right">
-          <img src={doctorsImg} alt="Medical Team" />
+          <img src={doctorsImg} alt="Medical Team" width="600" height="400" />
         </div>
       </section>
 

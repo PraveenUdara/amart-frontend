@@ -50,7 +50,7 @@ innovation and technology.`,
 
       {/* HERO */}
       <div className="about-hero">
-        <img src={aboutUsImg} alt="About Us" className="about-hero-bg" />
+        <img src={aboutUsImg} alt="About Us" className="about-hero-bg" width="1600" height="800" />
 
         <div className="about-hero-overlay">
           <div className="about-hero-inner">
@@ -147,6 +147,8 @@ innovation and technology.`,
             <img
               src={activeSection.image}
               alt={activeSection.title}
+              width="640"
+              height="400"
               className="mv-modern-img"
             />
           </div>
