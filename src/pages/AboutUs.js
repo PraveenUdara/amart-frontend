@@ -15,30 +15,21 @@ const AboutUs = () => {
       label: "Our Mission",
       title: "Our Mission",
       image: missionImg,
-      text: `Improve patient lives by delivering innovative genetic diagnosis solutions
-and provide high quality pharmaceuticals to government and private market.`,
+      text: `To be a leading integrated healthcare and wellness provider, delivering innovative solutions across pharmaceuticals, diagnostics, medical tourism, cosmeceuticals, and pharmacy services, while ensuring sustainable practices in our petroleum operations.`,
     },
     vision: {
       key: "vision",
       label: "Our Vision",
       title: "Our Vision",
       image: visionImg,
-      text: `To become Sri Lanka's most trusted healthcare bridge to the world,
-enabling early, accurate, and affordable medical solutions through global-standard
-innovation and technology.`,
+      text: `To be a leading integrated healthcare and wellness provider, delivering innovative solutions across pharmaceuticals, diagnostics, medical tourism, cosmeceuticals, and pharmacy services, while ensuring sustainable practices in our petroleum operations.`,
     },
     values: {
       key: "values",
-      label: "Our Values",
-      title: "Our Values",
+      label: "Our Ethic",
+      title: "Our Ethic",
       image: valuesImg,
-      textLines: [
-        "Patient-First Care",
-        "Innovation & Excellence",
-        "Integrity & Trust",
-        "Quality & Reliability",
-        "Collaboration & Partnership",
-      ],
+      text: `At A Mart Holdings, we strive to build strong, enduring relationships with our stakeholders by effectively satisfying our customer requirements and driving profitable outcomes. We confidently stand by our commitment to uphold our core ethical standards.`,
     },
   };
 
@@ -156,15 +147,9 @@ innovation and technology.`,
           <div className="mv-card-text fade-up delay-1">
             <h3 className="mv-title-modern">{activeSection.title}</h3>
 
-            {activeSection.key !== "values" ? (
-              <p className="mv-modern-text">{activeSection.text}</p>
-            ) : (
-              <ul className="mv-modern-list">
-                {activeSection.textLines.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
-            )}
+            <p className="mv-modern-text">
+              {activeSection.text}
+            </p>
           </div>
         </div>
       </section>
@@ -177,6 +162,19 @@ innovation and technology.`,
             Our journey is guided by a bold vision: to elevate Sri Lanka's healthcare landscape
             through innovation, global partnerships, and unwavering commitment to excellence.
             Together, we are shaping a healthier and more prosperous future for our nation.
+          </p>
+          <p className="chairman-text chairman-text-long">
+            When A Mart Holdings was founded in 2018, it began with a simple belief — that meaningful businesses are built not only on ambition, but on responsibility, trust, and purpose. Watching the Group evolve from those early days into a diversified and respected conglomerate has been one of the most rewarding journeys of my professional life. Today, A Mart operates across key sectors including Pharmaceuticals, Diagnostics, Medical Tourism, Helaya Pharmacy, Helaya International Trading (UAE), and Power & Energy. Each venture reflects our commitment to quality, innovation, and long-term value creation rather than short-term success.
+          </p>
+          <p className="chairman-text chairman-text-long">
+            What truly defines A Mart, however, is not the scale of our operations, but the people behind them. Our teams bring dedication, expertise, and resilience to everything they do. Their passion drives our ability to adapt, innovate, and move confidently through complex and competitive environments. As Chairman and Managing Director, my focus remains on building strong foundations — strengthening our core businesses, nurturing leadership, and carefully expanding into new markets with sustainable potential. We believe growth must be responsible, inclusive, and aligned with the well-being of our economy, environment, and society.
+          </p>
+          <p className="chairman-text chairman-text-long">
+            At A Mart, business is not an end in itself. It is a platform to empower people, strengthen industries, and contribute meaningfully to the nation’s progress. With a clear vision and a committed team, we move forward with confidence, purpose, and a deep sense of responsibility for the future we are helping to shape.
+          </p>
+          <p className="chairman-text chairman-text-long signature">
+            Anjana Athukorala<br />
+            Chairman / Managing Director
           </p>
         </div>
 

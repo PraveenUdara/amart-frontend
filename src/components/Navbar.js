@@ -1,6 +1,6 @@
 // src/components/Navbar.js
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "./Navbar.css";
 
@@ -90,7 +90,7 @@ const Navbar = () => {
             About Us
           </NavLink>
 
-          {/* ===== BUSINESS MEGA MENU (FIXED) ===== */}
+          {/* ===== BUSINESS MEGA MENU ===== */}
           <div
             className="nav-mega"
             onMouseEnter={() => {
@@ -109,13 +109,9 @@ const Navbar = () => {
               aria-expanded={bizOpen}
             >
               Businesses
-              <span
-                className={`arrow ${bizOpen ? "up" : ""}`}
-                aria-hidden="true"
-              ></span>
+              <span className={`arrow ${bizOpen ? "up" : ""}`} aria-hidden="true"></span>
             </button>
 
-            {/* Keep hover alive on panel */}
             <div
               className={`mega-panel ${bizOpen ? "show" : ""}`}
               onMouseEnter={() => {
@@ -125,14 +121,6 @@ const Navbar = () => {
               onMouseLeave={scheduleClose}
             >
               <div className="mega-inner">
-                <div className="mega-left">
-                  <h4>Our Businesses</h4>
-                  <p>
-                    A Mart Holdings operates across pharmaceuticals, diagnostics,
-                    clinics, medical tourism, manufacturing and global services.
-                  </p>
-                </div>
-
                 <div className="mega-grid">
                   {businessItems.map((item) => (
                     <NavLink
@@ -141,8 +129,27 @@ const Navbar = () => {
                       className="mega-item"
                       onClick={closeMenus}
                     >
-                      <span className="mega-icon">•</span>
                       <span className="mega-text">{item.label}</span>
+                      {item.label === "Medical Tourism" && (
+                        <div className="mega-sublist">
+                          <Link to="/business/medical-tourism#india" className="mega-subitem" onClick={closeMenus}>
+                            India
+                          </Link>
+                          <Link to="/business/medical-tourism#singapore" className="mega-subitem" onClick={closeMenus}>
+                            Singapore
+                          </Link>
+                        </div>
+                      )}
+                      {item.label === "Helaya Pharmacy" && (
+                        <div className="mega-sublist">
+                          <Link to="/business/helaya-pharmacy#kandy" className="mega-subitem" onClick={closeMenus}>
+                            Kandy
+                          </Link>
+                          <Link to="/business/helaya-pharmacy#kohuwala" className="mega-subitem" onClick={closeMenus}>
+                            Kohuwala
+                          </Link>
+                        </div>
+                      )}
                     </NavLink>
                   ))}
                 </div>

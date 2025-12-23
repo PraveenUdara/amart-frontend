@@ -86,14 +86,15 @@ const Footer = () => {
         <div className="footer-col">
           <h3 className="footer-heading">Our Businesses</h3>
 
-          <Link className="footer-link" to="/pharmaceuticals">Pharmaceuticals</Link>
-          <Link className="footer-link" to="/diagnostics">Medical Diagnostics</Link>
-          <Link className="footer-link" to="/tourism">Medical Tourism</Link>
-          <Link className="footer-link" to="/pharmacy">Helaya Pharmacy</Link>
-          <Link className="footer-link" to="/international">Helaya International</Link>
-          <Link className="footer-link" to="/branding">Branding & Design</Link>
-          <Link className="footer-link" to="/clinic">Helaya Clinic</Link>
-          <Link className="footer-link" to="/expia">Expia</Link>
+          <Link className="footer-link" to="/business/pharmaceuticals">Pharmaceutical</Link>
+          <Link className="footer-link" to="/business/diagnostics">Diagnostics</Link>
+          <Link className="footer-link" to="/business/medical-tourism">Medical Tourist</Link>
+          <Link className="footer-link" to="/business/helaya-pharmacy">Helaya Pharmacy</Link>
+          <Link className="footer-link" to="/business/medical-centers">Medical Centers</Link>
+          <Link className="footer-link" to="/business/branding-design">Branding & Design</Link>
+          <Link className="footer-link" to="/business/helaya-international">Helaya International</Link>
+          <Link className="footer-link" to="/business/manufacture">Manufacture</Link>
+          <Link className="footer-link" to="/business/expia">Expia</Link>
         </div>
 
       </div>

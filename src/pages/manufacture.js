@@ -16,9 +16,28 @@ const Manufacture = () => {
       <section className="manufacture-intro">
         <h2>Our Manufacturing Excellence</h2>
         <p>
-          A Mart Manufacturing focuses on delivering high-quality pharmaceutical
-          and healthcare products through modern production facilities, strict
-          quality controls, and international compliance standards.
+          At A Mart Holdings, we are redefining cosmetology and aesthetic wellness through the
+          development and manufacturing of scientifically formulated, proven skincare and
+          haircare products. As custodians of quality-driven formulations, we combine research,
+          innovation, and industry expertise to deliver safe, effective, and results-oriented
+          solutions.
+        </p>
+        <p>
+          Our manufacturing capabilities focus on skin, hair, and aesthetic care, offering a holistic
+          approach to beauty and self-care. Through strong research partnerships and advanced
+          formulation practices, we develop proprietary product ranges that align with the latest
+          advancements in cosmetology and dermatological science.
+        </p>
+        <p>
+          Our product portfolio includes brands such as Vital Skin and Pure Herbs, created to
+          support both professional treatments and at-home care. Each product is developed with
+          strict quality controls to ensure safety, consistency, and long-lasting results.
+        </p>
+        <p>
+          Driven by innovation and a commitment to excellence, we empower individuals to achieve
+          healthy, radiant skin and hair through solutions tailored to diverse needs. Every product
+          we manufacture reflects our dedication to quality, safety, and industry-leading
+          standards, reinforcing our position as a trusted name in cosmetology manufacturing.
         </p>
       </section>
 

@@ -37,8 +37,20 @@ const BrandingDesign = () => {
         <div className="design-overview-text">
           <h2>Distinctive brands that stand out</h2>
           <p>
-            From research to rollout, we craft cohesive brand systems that feel authentic,
-            modern, and ready for every touchpoint - digital or physical.
+            A Mart Branding & Design specializes in creating impactful, strategic branding and design
+            solutions that elevate businesses and bring ideas to life. We combine creativity with
+            clarity to build brands that are distinctive, consistent, and memorable.
+          </p>
+          <p>
+            Our expertise spans brand identity development, architectural design, and label &
+            packaging design, ensuring a cohesive and visually compelling presence across every
+            touchpoint. From concept to execution, we focus on design that not only looks
+            exceptional but also aligns with business objectives.
+          </p>
+          <p>
+            Driven by innovation, attention to detail, and a deep understanding of brand storytelling,
+            A Mart Branding & Design helps organizations create strong visual identities that stand
+            out, connect with audiences, and leave a lasting impression.
           </p>
           <div className="design-tags">
             <span className="tag">Brand Strategy</span>

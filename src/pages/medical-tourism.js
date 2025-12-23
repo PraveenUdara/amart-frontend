@@ -112,6 +112,21 @@ const hospitalData = {
 const MedicalTourism = () => {
   const [activeCountry, setActiveCountry] = useState("india");
 
+  // Sync tab with hash for direct links
+  useEffect(() => {
+    const syncFromHash = () => {
+      const hash = window.location.hash.toLowerCase();
+      if (hash.includes("singapore")) {
+        setActiveCountry("singapore");
+      } else if (hash.includes("india")) {
+        setActiveCountry("india");
+      }
+    };
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+    return () => window.removeEventListener("hashchange", syncFromHash);
+  }, []);
+
   useEffect(() => {
     const elements = document.querySelectorAll(".tourism-reveal");
     const observer = new IntersectionObserver(
@@ -149,11 +164,35 @@ const MedicalTourism = () => {
 
       {/* CONTENT */}
       <section className="tourism-content">
+        <div id="india"></div>
+        <div id="singapore"></div>
         <div className="tourism-intro">
           <h2>International Care, Guided Locally</h2>
           <p>
-            Access leading hospitals in India and Singapore with travel guidance, appointments, and aftercare,
-            so every step feels clear and supported.
+            A Mart Holdings – Medical Tourism Division connects patients with leading international
+            healthcare providers in Singapore, Turkey, India, and Bangladesh, ensuring access to
+            world-class medical care with confidence and convenience.
+          </p>
+          <p>
+            We work closely with accredited hospitals, internationally qualified consultants, and
+            highly experienced doctors and nursing teams who meet the highest global standards of
+            quality and patient safety. From initial consultation to post-treatment care, we manage
+            every step of the journey with precision and care.
+          </p>
+          <ul className="tourism-services-list">
+            <li>Professional recommendations on treatment options and specialists</li>
+            <li>Appointment scheduling within 24 hours</li>
+            <li>Teleconsultation arrangements</li>
+            <li>Guidance on estimated treatment and procedure costs</li>
+            <li>Visa application and extensions</li>
+            <li>Flight, accommodation, and airport transfer arrangements</li>
+            <li>Evacuation and repatriation assistance</li>
+            <li>Post-care and recovery support</li>
+            <li>Additional services tailored to individual needs</li>
+          </ul>
+          <p>
+            With a patient-first approach and end-to-end coordination, we make international healthcare
+            accessible, seamless, and stress-free, ensuring peace of mind throughout the medical journey.
           </p>
         </div>
 

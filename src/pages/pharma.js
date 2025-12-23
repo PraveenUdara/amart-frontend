@@ -44,9 +44,27 @@ const Pharmaceuticals = () => {
         <div className="pharma-text">
           <h2>Pharmaceuticals</h2>
           <p>
-            We are one of the top and well respected pharmaceutical distributors in Sri Lanka.
-            We supply pharmaceutical drugs and surgical devices to the state hospitals, private
-            hospitals and pharmacy stores around the country.
+            We specialize in the import, distribution, and retail of high-quality pharmaceutical
+            products, ensuring the highest standards of safety, efficacy, and regulatory compliance at
+            every stage.
+          </p>
+
+          <p>
+            Our temperature-controlled supply chain preserves product integrity through advanced
+            cold-chain management, real-time monitoring, and reliable backup systems. Supported
+            by an efficient distribution network, we ensure timely and accurate delivery to hospitals,
+            clinics, and pharmacies across the country.
+          </p>
+
+          <p>
+            Through Helaya Health Mart Pharmacy, we provide convenient access to essential
+            medicines, complemented by expert pharmacist guidance to support patient care.
+          </p>
+
+          <p>
+            Driven by a patient-first approach, innovation, and continuous improvement, we go
+            beyond product delivery to enhance healthcare accessibility and contribute positively to
+            better patient outcomes and overall well-being.
           </p>
 
           {/* CERTIFICATIONS */}

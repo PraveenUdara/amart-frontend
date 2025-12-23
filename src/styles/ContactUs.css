@@ -22,7 +22,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center 35%;
-  animation: zoomSlow 12s ease-in-out infinite alternate;
+  filter: brightness(1);
 }
 
 .contact-hero-overlay {
@@ -36,8 +36,8 @@
   color: #ffffff;
   background: linear-gradient(
     to right,
-    rgba(0, 30, 60, 0.65),
-    rgba(0, 30, 60, 0.15)
+    rgba(0, 30, 60, 0.4),
+    rgba(0, 30, 60, 0.08)
   );
 }
 

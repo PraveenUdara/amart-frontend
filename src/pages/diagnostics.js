@@ -31,10 +31,26 @@ const Diagnostics = () => {
       <section className="business-content">
         <h2>World-Class Diagnostic Services</h2>
         <p>
-          A Mart Diagnostics delivers accurate, timely, and reliable diagnostic
-          services through partnerships with internationally accredited
-          laboratories.
+          We provide advanced diagnostic and laboratory services that deliver accurate, timely
+          results to support informed healthcare decisions. Using state-of-the-art technology and
+          adhering to international quality standards, we offer a comprehensive range of testing
+          solutions, including Pathology, Hematology, Oncology, hereditary and rare disease
+          testing, screening and carrier testing, and personalized treatment support.
         </p>
+        <p>
+          Our expert team is committed to precision, efficiency, and reliability, ensuring seamless
+          testing experiences for hospitals, clinics, and individual patients. Every test is conducted
+          with the highest level of accuracy to support clinicians in diagnosis, early detection, and
+          effective treatment planning.
+        </p>
+        <p>
+          By continuously integrating the latest advancements in diagnostic science, we contribute
+          to improved health outcomes and enhanced patient care—helping build a healthier
+          community through dependable and high-quality diagnostics.
+        </p>
+        <div className="diagnostics-cta">
+          <a className="diag-contact-btn" href="/contact">Contact Us</a>
+        </div>
       </section>
 
       {/* ================= MEDGENOME FEATURE ================= */}
@@ -56,7 +72,7 @@ const Diagnostics = () => {
             South Asia. MedGenome offers comprehensive diagnostic solutions to
             researchers, doctors and hospitals.
           </p>
-          <p className="medgenome-cta">Contact us to arrange a test.</p>
+          <a className="diag-contact-btn" href="/contact">Contact Us</a>
         </div>
       </section>
 
@@ -77,7 +93,7 @@ const Diagnostics = () => {
           <p>
             Click here to learn more about Centogene’s diagnostic services.
           </p>
-          <p className="centogene-cta">Contact us to arrange a test.</p>
+          <a className="diag-contact-btn" href="/contact">Contact Us</a>
         </div>
         <div className="centogene-image">
           <img src={centogImg} alt="Centogene" />

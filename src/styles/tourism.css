@@ -21,7 +21,7 @@
 .tourism-overlay {
   width: 100%;
   height: 100%;
-  background: linear-gradient(115deg, rgba(5, 35, 70, 0.78), rgba(5, 35, 70, 0.35));
+  background: linear-gradient(115deg, rgba(5, 35, 70, 0.58), rgba(5, 35, 70, 0.25));
   display: flex;
   align-items: center;
   position: relative;
@@ -78,6 +78,19 @@
   font-size: 1rem;
   line-height: 1.7;
   color: #44505d;
+}
+
+.tourism-services-list {
+  text-align: left;
+  max-width: 840px;
+  margin: 10px auto 14px;
+  padding-left: 18px;
+  color: #44505d;
+  line-height: 1.7;
+}
+
+.tourism-services-list li {
+  margin-bottom: 6px;
 }
 
 .tourism-tabs {

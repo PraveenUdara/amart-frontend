@@ -161,20 +161,22 @@ const Home = () => {
       {/* ================= WHY CHOOSE US ================= */}
       <section className="choose-section">
         <div className="choose-left">
-          <h2>Why Patients Choose Us</h2>
+          <h2>Why Choose Us</h2>
 
           <p>
-            A Mart Health works with highly experienced specialists to deliver
-            evidence-based care using modern medical technologies.
+            A Mart Holdings is a trusted leader across pharmaceuticals, diagnostics, cosmetics,
+            medical tourism, and pharmacy services, delivering integrated healthcare and wellness
+            solutions under one group.
           </p>
 
           <p>
-            We provide preventive healthcare, diagnostic services and lifestyle
-            treatments for long-term wellness.
+            We are driven by quality, innovation, and ethical business practices, supported by
+            advanced technology and strict global standards. Our diversified expertise allows us to
+            offer reliable, customer-focused solutions while ensuring affordability and accessibility.
           </p>
 
           <p>
-            All A Mart facilities follow international patient safety standards.
+            At A Mart, every decision is guided by one principle — putting our customers first.
           </p>
         </div>
 

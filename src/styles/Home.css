@@ -208,14 +208,14 @@
   flex: 1.5;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
+  gap: 18px;
 }
 
 .business-btn-card {
   background: linear-gradient(to bottom, #f7f9fc, #e6edf5);
   border-radius: 20px;
-  padding: 18px;
-  height: 180px;
+  padding: 14px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;

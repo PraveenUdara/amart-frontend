@@ -180,13 +180,14 @@
 /* ====================== COPYRIGHT ====================== */
 .footer-bottom {
   text-align: center;
-  padding: 22px;
+  padding: 16px;
   font-size: 0.95rem;
-  color: #35506b;
-  font-weight: 500;
-  background: rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+  font-weight: 600;
+  background: #6572e9;
   position: relative;
   z-index: 2;
+  border-radius: 10px;
 }
 
 /* ====================== RESPONSIVE ====================== */
