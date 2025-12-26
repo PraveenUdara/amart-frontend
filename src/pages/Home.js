@@ -98,6 +98,10 @@ const Home = () => {
               innovation, leadership, and trust.
             </p>
 
+            <a className="hero-cta fade-in delay-3" href="/contact">
+              Contact Us
+            </a>
+
             {/* SLIDE LABEL */}
             <div key={heroIndex} className="hero-slide-info">
               <h3 className="hero-slide-title">
