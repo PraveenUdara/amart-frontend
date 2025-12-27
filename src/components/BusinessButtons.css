@@ -1,0 +1,93 @@
+/* ---------------- BUSINESS GRID ---------------- */
+.business-section {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.business-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #0a2540;
+}
+
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  padding: 0 40px;
+}
+
+/* Ensure buttons inherit the same font as navbar/body */
+.business-buttons-container {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------------- BUSINESS CARD ---------------- */
+.business-card {
+  background: #eef6ff; /* Light hospital blue */
+  border-radius: 16px;
+  padding: 35px 15px;
+  cursor: pointer;
+
+  border: 1px solid rgba(0, 89, 171, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.30s ease;
+}
+
+/* Hover effect — EXACT look from screenshot */
+.business-card:hover {
+  background: #0a66c2; /* Same medical blue as screenshot */
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  border-color: transparent;
+}
+
+/* ---------------- ICON STYLE ---------------- */
+.business-img {
+  width: 85px;
+  height: 85px;
+  background: white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.15);
+
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.business-card:hover .business-img {
+  transform: scale(1.1);
+}
+
+.business-img img {
+  width: 50px;
+  object-fit: contain;
+}
+
+/* ---------------- TITLE STYLE ---------------- */
+.business-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #003d73;
+  text-align: center;
+  line-height: 1.3;
+
+  transition: color 0.3s ease;
+}
+
+/* Hover — text becomes white */
+.business-card:hover .business-name {
+  color: white;
+}

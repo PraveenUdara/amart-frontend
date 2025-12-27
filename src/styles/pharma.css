@@ -1,0 +1,235 @@
+/* ===================== SCROLL ANIMATION ===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================== HERO ===================== */
+.pharma-hero {
+  position: relative;
+  width: 100%;
+  height: 52vh;
+  overflow: hidden;
+}
+
+.pharma-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pharma-hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 8%;
+  color: #ffffff;
+  background: linear-gradient(
+    to right,
+    rgba(3, 32, 63, 0.65),
+    rgba(3, 32, 63, 0.15)
+  );
+}
+
+.pharma-hero-text h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.pharma-hero-text p {
+  max-width: 520px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* ===================== INFO SECTION ===================== */
+.pharma-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 90px 8% 100px;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(13,110,253,0.06), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(100,181,246,0.08), transparent 40%),
+    linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+}
+
+.pharma-text {
+  flex: 1;
+  max-width: 640px;
+}
+
+.pharma-text h2 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #0d2744;
+  margin-bottom: 18px;
+}
+
+.pharma-text p {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: #44505d;
+}
+
+/* ===================== CERTIFICATIONS ===================== */
+.pharma-certifications {
+  display: flex;
+  gap: 18px;
+  margin: 26px 0 32px;
+  flex-wrap: wrap;
+}
+
+.cert-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: #f2f7ff;
+  border: 1px solid #dbe9ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0d2744;
+  box-shadow: 0 6px 14px rgba(13, 39, 68, 0.08);
+}
+
+/* ===================== CTA BUTTON ===================== */
+.pharma-cta {
+  margin-top: 28px;
+}
+
+.pharma-cta a {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0d6efd, #0a58ca);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 14px 32px rgba(13,110,253,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pharma-cta a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(13,110,253,0.45);
+}
+
+/* ===================== IMAGE RIGHT ===================== */
+.pharma-image-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pharma-info-image {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.14);
+  background: #ffffff;
+}
+
+/* ===================== QUALITY SECTION ===================== */
+.pharma-quality {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  padding: 0 8% 100px;
+}
+
+.pharma-quality-image {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.pharma-quality-image img {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.14);
+}
+
+.pharma-quality-text h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0d2744;
+  margin-bottom: 14px;
+}
+
+.pharma-quality-text p {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: #44505d;
+  margin-bottom: 14px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1000px) {
+  .pharma-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 70px 6% 80px;
+  }
+
+  .pharma-image-wrap {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .pharma-info-image {
+    max-width: 100%;
+  }
+
+  .pharma-quality {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .pharma-quality-image {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .pharma-hero {
+    height: 45vh;
+  }
+
+  .pharma-hero-text {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .pharma-hero-text h1 {
+    font-size: 2.1rem;
+  }
+
+  .pharma-info {
+    padding: 60px 6% 70px;
+  }
+
+  .pharma-quality {
+    padding: 0 6% 80px;
+  }
+}

@@ -1,0 +1,187 @@
+// src/pages/ContactUs.js
+import React from "react";
+import "../index.css";
+import "../styles/ContactUs.css";
+import contactCover from "../assets/contact_cover.jpg";
+
+const ContactUs = () => {
+  return (
+    <div className="contact-page">
+
+      {/* COVER */}
+      <section className="contact-hero">
+        <img
+          src={contactCover}
+          alt="Contact Us Cover"
+          className="contact-hero-img"
+        />
+
+        <div className="contact-hero-overlay">
+          <div className="contact-hero-inner">
+            <h1 className="contact-hero-title fade-in-up">Contact Us</h1>
+            <p className="contact-hero-sub fade-in-up delay-1">
+              We're here to help. Reach out to A Mart Holdings anytime.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* QUICK INFO */}
+      <div className="contact-highlight">
+        <div className="highlight-card fade-up">
+          <span className="highlight-label">Call / WhatsApp</span>
+          <span className="highlight-value">+94 77 7744 816</span>
+          <span className="highlight-value">+94 77 7648 888</span>
+        </div>
+        <div className="highlight-card fade-up delay-1">
+          <span className="highlight-label">Email</span>
+          <span className="highlight-value">info@amartholdings.com</span>
+        </div>
+        <div className="highlight-card fade-up delay-2">
+          <span className="highlight-label">Visit</span>
+          <span className="highlight-value">City Center, Sunethradevi Rd</span>
+          <span className="highlight-value">Kohuwala, Sri Lanka</span>
+        </div>
+      </div>
+
+      {/* MESSAGE + FORM */}
+      <div className="contact-top-section">
+
+        <div className="help-text fade-up">
+          <h2>We are here to help!</h2>
+          <p>
+            Let us know how we can best serve you. Use the contact form to email us,
+            and we will reply as soon as possible.
+          </p>
+          <p>
+            It's our honor to support you on your journey toward better health
+            and wellbeing.
+          </p>
+        </div>
+
+        <div className="form-wrapper fade-up delay-1">
+          <div className="contact-container">
+            <h1 className="contact-title">Send Us a Message</h1>
+            <p className="contact-subtitle">
+              Our team will respond as soon as possible.
+            </p>
+
+            <form
+              className="contact-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                alert("Thank you! Your message has been sent.");
+              }}
+            >
+              <div className="two-column">
+                <div className="form-group">
+                  <label className="form-label">Name</label>
+                  <input
+                    className="form-input"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label className="form-label">Phone Number</label>
+                  <input
+                    className="form-input"
+                    type="tel"
+                    placeholder="07X XXX XXXX"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">Email</label>
+                <input
+                  className="form-input"
+                  type="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">Message</label>
+                <textarea
+                  className="form-textarea"
+                  placeholder="Write your message here..."
+                  required
+                />
+              </div>
+
+              <button className="btn-submit" type="submit">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      {/* MAP + INFO */}
+      <div className="map-info-section">
+
+        <div className="map-container fade-up">
+          <iframe
+            title="A Mart Location"
+            width="100%"
+            height="100%"
+            style={{ border: 0, borderRadius: "12px" }}
+            loading="lazy"
+            allowFullScreen
+            src="https://www.google.com/maps?q=A%20Mart%20Holdings%20(Pvt)%20Ltd,%20City%20Center,%20Sunethradevi%20Rd,%20Kohuwala&output=embed"
+          ></iframe>
+        </div>
+
+        <div className="info-panel fade-up delay-1">
+          <h2 className="info-title">Address</h2>
+          <p className="info-text">
+            A Mart Holdings (Pvt) Ltd <br />
+            City Center, No.12,<br />
+            Sunethradevi Road, Kohuwala,<br />
+            Sri Lanka.
+          </p>
+
+          <h2 className="info-title">Contact Numbers</h2>
+          <p className="info-text">
+            Tel / WhatsApp:<br />
+            +94 77 7744 816<br />
+            +94 77 7648 888
+          </p>
+
+          <h2 className="info-title">Email</h2>
+          <p className="info-text">info@amartholdings.com</p>
+        </div>
+      </div>
+
+      {/* BOTTOM BOXES */}
+      <div className="bottom-boxes">
+
+        <div className="box get-direction-box fade-up">
+          <h3>Get Directions</h3>
+          <a
+            href="https://www.google.com/maps?q=A%20Mart%20Holdings%20(Pvt)%20Ltd,%20City%20Center,%20Sunethradevi%20Rd,%20Kohuwala"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open in Google Maps
+          </a>
+        </div>
+
+        <div className="box open-hours-box fade-up delay-1">
+          <h3>Open Hours</h3>
+          <p>Mon - Fri: 8.00 am - 5.00 pm</p>
+          <p>Sat - Sun: Closed</p>
+          <p>Poya Day: Closed</p>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default ContactUs;

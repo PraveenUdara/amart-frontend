@@ -1,0 +1,252 @@
+/* =========================================================
+   EVENTS PAGE – MODERN MEDICAL / CORPORATE STYLE
+========================================================= */
+
+.events-page {
+  width: 100%;
+  background: #f5f7fa;
+  padding-bottom: 90px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= EVENTS HERO ================= */
+.events-hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.events-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomSlow 12s ease-in-out infinite alternate;
+}
+
+.events-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 8%;
+  color: #ffffff;
+  background: linear-gradient(
+    to right,
+    rgba(5, 35, 70, 0.55),
+    rgba(5, 35, 70, 0.08)
+  );
+}
+
+.events-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.events-hero-sub {
+  font-size: 1.1rem;
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+/* ================= MAIN CONTAINER ================= */
+.events-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px 0;
+}
+
+/* ================= HEADER ================= */
+.events-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.events-header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.events-header p {
+  color: #607d8b;
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ================= EVENT CARD ================= */
+.event-section {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 34px;
+  margin-bottom: 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.event-section h2 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #0d47a1;
+  margin-bottom: 6px;
+}
+
+.event-section h4 {
+  font-size: 1rem;
+  color: #546e7a;
+  margin-bottom: 12px;
+}
+
+.event-section p {
+  font-size: 0.95rem;
+  color: #37474f;
+  margin-bottom: 6px;
+}
+
+/* ================= IMAGE GALLERY ================= */
+.event-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.event-gallery img {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.event-gallery img:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= LIGHTBOX ================= */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 15, 25, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.25s ease;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  animation: zoomIn 0.35s ease;
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* CLOSE BUTTON */
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  background: #ffffff;
+  color: #333;
+  font-size: 26px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.12);
+}
+
+/* ================= ANIMATIONS ================= */
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.fade-up.delay-1 { animation-delay: 0.25s; }
+.fade-up.delay-2 { animation-delay: 0.45s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); }
+  to { transform: scale(1); }
+}
+
+@keyframes zoomSlow {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .events-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .events-hero-overlay {
+    padding-left: 5%;
+  }
+
+  .event-section {
+    padding: 24px;
+  }
+
+  .event-gallery img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .event-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .event-gallery img {
+    height: 140px;
+  }
+
+  .lightbox-close {
+    top: -10px;
+    right: -10px;
+  }
+}
