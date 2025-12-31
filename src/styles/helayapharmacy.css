@@ -1,0 +1,260 @@
+/* ================= HELAYA PHARMACY PAGE ================= */
+
+.helaya-page {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background: #f7f9fc;
+  color: #0a2540;
+}
+
+.helaya-cover {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  min-height: 380px;
+  overflow: hidden;
+  display: flex;
+}
+
+.helaya-cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+.helaya-cover-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(10, 34, 54, 0.5),
+    rgba(10, 34, 54, 0.18)
+  );
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.helaya-cover-content {
+  padding: 0 8%;
+  max-width: 720px;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+.helaya-cover-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.helaya-cover-content p {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  opacity: 0.96;
+}
+
+.helaya-body {
+  padding: 60px 8%;
+  max-width: 900px;
+  line-height: 1.8;
+  margin: 0 auto;
+}
+
+.helaya-section-title {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0 auto 18px;
+  color: #0a2540;
+}
+
+.helaya-body p {
+  margin: 0 auto 16px;
+  max-width: 780px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.helaya-locations {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.helaya-btn {
+  padding: 12px 28px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(10, 75, 134, 0.2);
+  background: linear-gradient(135deg, #0a4b86, #0a2f56);
+  background-size: 200% 200%;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.4s ease,
+    filter 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 140px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.helaya-btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+  background-position: 100% 50%;
+}
+
+.helaya-btn.active {
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 12px 22px rgba(10, 75, 134, 0.25);
+  filter: drop-shadow(0 0 14px rgba(10, 75, 134, 0.22));
+}
+
+.helaya-btn:focus-visible {
+  outline: 2px solid #0a4b86;
+  outline-offset: 2px;
+}
+
+.helaya-btn-subtext {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.helaya-hours {
+  margin: 26px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  max-width: 600px;
+}
+
+.hour-card {
+  background: #ffffff;
+  border: 1px solid rgba(10, 75, 134, 0.08);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: grid;
+  gap: 6px;
+  align-items: center;
+  animation: floatUp 0.6s ease;
+}
+
+.hour-location {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #0a2540;
+}
+
+.hour-time {
+  color: #2f3a4a;
+  font-size: 0.98rem;
+}
+
+/* Branch feature */
+.branch-feature {
+  padding: 40px 8% 70px;
+  display: grid;
+  grid-template-columns: 1.05fr 1.1fr;
+  gap: 26px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), #eef3f9);
+  margin: 10px 8%;
+  border-radius: 16px;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.12);
+}
+
+.branch-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+  display: block;
+  animation: fadeUp 0.55s ease;
+}
+
+.branch-text h3 {
+  margin: 0 0 10px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #0a2540;
+}
+
+.branch-hours {
+  font-weight: 600;
+  color: #0a4b86;
+  margin-bottom: 10px;
+  letter-spacing: 0.4px;
+}
+
+.branch-text p {
+  margin: 0 0 12px;
+  color: #2f3a4a;
+  line-height: 1.7;
+  animation: fadeUp 0.55s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .helaya-cover {
+    height: 46vh;
+    min-height: 320px;
+  }
+
+  .helaya-cover-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .helaya-cover-content p {
+    font-size: 1rem;
+  }
+
+  .helaya-body {
+    padding: 50px 6%;
+  }
+
+  .branch-feature {
+    grid-template-columns: 1fr;
+    padding: 30px 6% 60px;
+    margin: 10px 4%;
+  }
+
+  .helaya-btn {
+    min-width: 130px;
+  }
+}
